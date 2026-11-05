@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yo‘lchi Avto Test</title>
+<style>
+@font-face{font-family:"Unbounded";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/unbounded-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Unbounded";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/unbounded-latin-ext-600-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Unbounded";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/unbounded-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Unbounded";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/unbounded-latin-ext-700-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Onest";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/onest-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Onest";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/onest-latin-ext-400-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Onest";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/onest-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Onest";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/onest-latin-ext-500-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Onest";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/onest-latin-600-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Onest";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/onest-latin-ext-600-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Onest";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/onest-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Onest";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/onest-latin-ext-700-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/jetbrains-mono-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/jetbrains-mono-latin-ext-500-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/jetbrains-mono-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/jetbrains-mono-latin-ext-700-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}[hidden]{display:none!important}img{max-width:100%}body{margin:0}
+</style>
+<style>
+/* Layout: one-column phone app, max 540px, screens swapped in place; road-sign blue + signal amber on asphalt neutrals */
+:root{
+  --bg:#EDF0F4; --surface:#FFFFFF; --surface-2:#E2E7EE; --fg:#121821; --muted:#5A6576; --line:#D2D9E3;
+  --accent:#E09A00; --accent-ink:#1E1500; --blue:#1D5FC4; --blue-ink:#FFFFFF;
+  --ok:#17894D; --ok-bg:#DDF3E6; --bad:#C8332B; --bad-bg:#FBE3E1;
+  --road:#4B5360; --verge:#D7DDE5;
+  --f-display:"Unbounded","Onest",system-ui,sans-serif;
+  --f-body:"Onest",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1217; --surface:#171D25; --surface-2:#212934; --fg:#E8EDF4; --muted:#8F9BAC; --line:#2A333F;
+  --accent:#F5B414; --accent-ink:#1E1500; --blue:#4A88EE; --blue-ink:#07111F;
+  --ok:#3CC57F; --ok-bg:#12301F; --bad:#F2655E; --bad-bg:#3A1716;
+  --road:#3A424D; --verge:#1C232C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1217; --surface:#171D25; --surface-2:#212934; --fg:#E8EDF4; --muted:#8F9BAC; --line:#2A333F;
+  --accent:#F5B414; --accent-ink:#1E1500; --blue:#4A88EE; --blue-ink:#07111F;
+  --ok:#3CC57F; --ok-bg:#12301F; --bad:#F2655E; --bad-bg:#3A1716;
+  --road:#3A424D; --verge:#1C232C; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px 40px}
+#app{max-width:540px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+h1,h2,h3{margin:0;text-wrap:balance}
+.muted{color:var(--muted)}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:600}
+
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:46px;height:46px;flex:none}
+.brand h1{font-family:var(--f-display);font-size:22px;font-weight:700}
+.brand p{margin:0;color:var(--muted);font-size:13px}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat b{display:block;font-family:var(--f-mono);font-size:22px;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted)}
+.bar{height:8px;border-radius:8px;background:var(--surface-2);overflow:hidden;margin-top:14px}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:8px}
+
+.hero{background:var(--blue);color:var(--blue-ink);border-radius:20px;padding:18px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;text-align:left;width:100%}
+.hero h2{font-family:var(--f-display);font-size:19px}
+.hero p{margin:4px 0 0;font-size:13px;opacity:.85}
+.hero .go{background:var(--accent);color:var(--accent-ink);font-weight:700;border-radius:12px;padding:10px 14px;white-space:nowrap}
+
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;text-align:left;display:flex;flex-direction:column;gap:8px;min-height:118px;transition:transform .12s,border-color .12s}
+.tile:hover{border-color:var(--blue);transform:translateY(-1px)}
+.tile .ic{width:34px;height:34px}
+.tile b{font-weight:700;font-size:15px}
+.tile span{font-size:12.5px;color:var(--muted)}
+.count{font-family:var(--f-mono);font-size:12px;background:var(--surface-2);border-radius:6px;padding:1px 6px;margin-left:4px}
+
+.top{display:flex;align-items:center;gap:10px}
+.iconbtn{width:40px;height:40px;border-radius:12px;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;flex:none}
+.top .t{flex:1;min-width:0;font-weight:700;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.timer{font-family:var(--f-mono);font-weight:700;font-variant-numeric:tabular-nums;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 10px}
+.timer.warn{color:var(--bad);border-color:var(--bad)}
+
+.dots{display:flex;flex-wrap:wrap;gap:5px}
+.dot{width:26px;height:26px;border-radius:7px;background:var(--surface);border:1px solid var(--line);font-family:var(--f-mono);font-size:11px;display:grid;place-items:center;color:var(--muted)}
+.dot.cur{border-color:var(--accent);color:var(--fg);box-shadow:inset 0 0 0 1px var(--accent)}
+.dot.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.dot.bad{background:var(--bad);border-color:var(--bad);color:#fff}
+
+.qtext{font-size:17px;font-weight:600;line-height:1.4}
+.media{background:var(--verge);border-radius:16px;overflow:hidden;display:grid;place-items:center}
+.media.sign{padding:22px}
+.media.sign svg{width:132px;height:132px}
+.media.sign img{max-height:220px;border-radius:8px}
+.media.scene svg{width:100%;height:auto;display:block}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;transition:border-color .12s,background .12s}
+.opt:not([disabled]):hover{border-color:var(--blue)}
+.opt .k{font-family:var(--f-mono);font-size:12px;font-weight:700;color:var(--muted);padding-top:2px;flex:none}
+.opt[disabled]{cursor:default}
+.opt.right{border-color:var(--ok);background:var(--ok-bg)}
+.opt.right .k{color:var(--ok)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.opt.wrong .k{color:var(--bad)}
+.fb{border-radius:14px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.fb b.ok{color:var(--ok)} .fb b.bad{color:var(--bad)}
+.fb p{margin:0;font-size:14px}
+.primary{background:var(--accent);color:var(--accent-ink);font-weight:700;border-radius:14px;padding:14px;width:100%;font-size:15px}
+.primary:hover{filter:brightness(1.05)}
+.ghost{background:var(--surface);border:1px solid var(--line);font-weight:600;border-radius:14px;padding:13px;width:100%}
+.ghost.danger{color:var(--bad)}
+
+.duel{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px}
+.pl{display:flex;flex-direction:column;gap:2px}
+.pl.r{text-align:right}
+.pl b{font-family:var(--f-mono);font-size:22px;font-variant-numeric:tabular-nums}
+.pl span{font-size:12px;color:var(--muted)}
+.vs{font-family:var(--f-display);font-size:13px;color:var(--muted)}
+.botstate{font-size:12px;color:var(--muted);text-align:center}
+.botstate.done{color:var(--accent)}
+.tbar{height:6px;background:var(--surface-2);border-radius:6px;overflow:hidden}
+.tbar i{display:block;height:100%;background:var(--blue);transition:width .25s linear}
+
+.list{display:flex;flex-direction:column;gap:8px}
+.row{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;text-align:left;width:100%}
+.row:hover{border-color:var(--blue)}
+.row .grow{flex:1;min-width:0}
+.row small{color:var(--muted);display:block}
+.ring{font-family:var(--f-mono);font-size:12px;font-weight:700;min-width:44px;text-align:right;font-variant-numeric:tabular-nums}
+.num{width:36px;height:36px;border-radius:10px;background:var(--surface-2);display:grid;place-items:center;font-family:var(--f-mono);font-weight:700;flex:none}
+.num.done{background:var(--ok);color:#fff}
+.bilets{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+.bilet{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center;display:flex;flex-direction:column;gap:2px}
+.bilet:hover{border-color:var(--blue)}
+.bilet b{font-family:var(--f-mono);font-size:20px}
+.bilet span{font-size:12px;color:var(--muted)}
+.bilet.ok{border-color:var(--ok)} .bilet.ok span{color:var(--ok)}
+.bilet.bad span{color:var(--bad)}
+
+.result{text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center;padding:24px 16px}
+.stamp{font-family:var(--f-display);font-size:13px;letter-spacing:.12em;text-transform:uppercase;border:2.5px solid currentColor;border-radius:10px;padding:6px 12px;transform:rotate(-3deg)}
+.stamp.ok{color:var(--ok)} .stamp.bad{color:var(--bad)}
+.big{font-family:var(--f-mono);font-size:52px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.review{display:flex;flex-direction:column;gap:8px}
+.rv{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:12px;padding:10px 12px;font-size:14px}
+.rv b{display:block;margin-bottom:4px}
+.rv .c{color:var(--ok)}
+.btns{display:flex;flex-direction:column;gap:8px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.sg{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center}
+.sg svg{width:72px;height:72px}
+.sg b{font-size:13.5px}
+.foot{font-size:12px;color:var(--muted);text-align:center}
+.linkbtn{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+/* lesson player */
+.stage{background:var(--verge);border-radius:18px;overflow:hidden;aspect-ratio:3/2;max-width:100%;display:grid;place-items:center;position:relative}
+.stage>svg{width:100%;height:100%;display:block}
+.signrow{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;padding:16px}
+.signrow svg{width:min(30vw,128px);height:min(30vw,128px);animation:pop .45s cubic-bezier(.3,1.5,.6,1) both}
+.signrow svg:nth-child(2){animation-delay:.12s} .signrow svg:nth-child(3){animation-delay:.24s}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
+.bigvis{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:16px;animation:pop .45s ease both}
+.bigvis b{font-family:var(--f-display);font-size:clamp(40px,13vw,68px);line-height:1;color:var(--fg)}
+.bigvis span{color:var(--muted);font-size:14px;max-width:30ch}
+.caption{font-size:17px;font-weight:600;line-height:1.45;min-height:3em}
+.ctrl{display:flex;align-items:center;gap:12px}
+.play{width:56px;height:56px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;flex:none}
+.ctrl .grow{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.ctrl input[type=range]{width:100%;accent-color:var(--accent)}
+.ctrl .tm{font-family:var(--f-mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.steps{display:flex;flex-direction:column;gap:6px}
+.step{display:flex;gap:10px;text-align:left;padding:10px 12px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-size:14px;color:var(--muted)}
+.step b{font-family:var(--f-mono);font-size:12px;flex:none;padding-top:1px}
+.step.cur{color:var(--fg);border-color:var(--accent)}
+.step.past{color:var(--fg)}
+.lamp{opacity:.16}
+.tl-cycle .lr{animation:lr 4.5s infinite} .tl-cycle .ly{animation:ly 4.5s infinite} .tl-cycle .lg{animation:lg 4.5s infinite}
+@keyframes lr{0%,33%{opacity:1}34%,100%{opacity:.16}}
+@keyframes ly{0%,33%{opacity:.16}34%,45%{opacity:1}46%,100%{opacity:.16}}
+@keyframes lg{0%,45%{opacity:.16}46%,100%{opacity:1}}
+.blink{animation:blink 1s steps(2,jump-none) infinite}
+@keyframes blink{0%{opacity:1}100%{opacity:.16}}
+.on{opacity:1}
+
+/* import */
+textarea{width:100%;min-height:180px;font-family:var(--f-mono);font-size:12px;background:var(--surface-2);color:var(--fg);border:1px solid var(--line);border-radius:12px;padding:10px}
+.filebtn{display:block;text-align:center;background:var(--blue);color:var(--blue-ink);font-weight:700;border-radius:14px;padding:14px;cursor:pointer}
+.msg{font-size:14px;padding:10px 12px;border-radius:12px}
+.msg.ok{background:var(--ok-bg);color:var(--ok)} .msg.bad{background:var(--bad-bg);color:var(--bad)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+(()=>{
+const R='#D7262B',B='#1F5FBF',Y='#F7C21B',K='#111',W='#fff',G='#2BB34A';
+const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const svg=(i,vb='0 0 100 100')=>`<svg viewBox="${vb}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">${i}</svg>`;
+const warn=i=>`<polygon points="50,9 93,85 7,85" fill="${W}" stroke="${R}" stroke-width="8" stroke-linejoin="round"/>${i}`;
+const prohib=i=>`<circle cx="50" cy="50" r="43" fill="${W}" stroke="${R}" stroke-width="9"/>${i}`;
+const blueC=i=>`<circle cx="50" cy="50" r="45" fill="${B}"/>${i}`;
+const blueSq=i=>`<rect x="5" y="5" width="90" height="90" rx="9" fill="${B}" stroke="${W}" stroke-width="3"/>${i}`;
+const txt=(t,s,y,c=K)=>`<text x="50" y="${y}" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="${s}" fill="${c}">${t}</text>`;
+const ln=(d,c=K,w=5)=>`<path d="${d}" stroke="${c}" stroke-width="${w}" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+function roundArrows(){let s=`<circle cx="50" cy="50" r="24" fill="none" stroke="${W}" stroke-width="8" stroke-dasharray="36 14.27"/>`;
+  for(let k=0;k<3;k++){const th=(k*120)*Math.PI/180,cx=50+24*Math.cos(th),cy=50+24*Math.sin(th);
+    const tx=Math.sin(th),ty=-Math.cos(th),nx=Math.cos(th),ny=Math.sin(th);
+    s+=`<polygon points="${cx+tx*11},${cy+ty*11} ${cx+nx*9},${cy+ny*9} ${cx-nx*9},${cy-ny*9}" fill="${W}"/>`;}
+  return blueC(s);}
+const person=(x,y,s=1)=>`<g transform="translate(${x} ${y}) scale(${s})"><circle cx="0" cy="-16" r="5" fill="${K}"/><path d="M0 -10 L-3 6 M-3 6 L-9 20 M-3 6 L5 20 M-1 -4 L-10 2 M-1 -4 L9 0" stroke="${K}" stroke-width="4" stroke-linecap="round" fill="none"/></g>`;
+const mainS=`<polygon points="50,3 97,50 50,97 3,50" fill="${W}" stroke="#9AA3AF" stroke-width="1.5"/><polygon points="50,17 83,50 50,83 17,50" fill="${Y}"/>`;
+
+const SIGNS={
+ stop:{n:'To‘xtamasdan o‘tish taqiqlanadi',g:'Imtiyoz',s:`<polygon points="30,4 70,4 96,30 96,70 70,96 30,96 4,70 4,30" fill="${R}" stroke="${W}" stroke-width="4"/>`+txt('STOP',27,60,W)},
+ giveway:{n:'Yo‘l bering',g:'Imtiyoz',s:`<polygon points="7,15 93,15 50,90" fill="${W}" stroke="${R}" stroke-width="8" stroke-linejoin="round"/>`},
+ main:{n:'Asosiy yo‘l',g:'Imtiyoz',s:mainS},
+ mainEnd:{n:'Asosiy yo‘lning oxiri',g:'Imtiyoz',s:mainS+`<line x1="26" y1="74" x2="74" y2="26" stroke="${K}" stroke-width="6"/>`},
+ pedWarn:{n:'Piyodalar o‘tish joyi (ogohlantiruvchi)',g:'Ogohlantiruvchi',s:warn(person(50,66,.95))},
+ children:{n:'Bolalar',g:'Ogohlantiruvchi',s:warn(person(42,62,1)+person(60,67,.75))},
+ lights:{n:'Svetofor bilan tartibga solish',g:'Ogohlantiruvchi',s:warn(`<rect x="41" y="35" width="18" height="44" rx="4" fill="${K}"/><circle cx="50" cy="43" r="4.5" fill="${R}"/><circle cx="50" cy="57" r="4.5" fill="${Y}"/><circle cx="50" cy="71" r="4.5" fill="${G}"/>`)},
+ slippery:{n:'Sirpanchiq yo‘l',g:'Ogohlantiruvchi',s:warn(`<rect x="38" y="40" width="24" height="14" rx="4" fill="${K}"/>`+ln('M34 66 q5 -7 10 0 t10 0 M50 76 q5 -7 10 0 t10 0',K,3.5))},
+ narrow:{n:'Yo‘lning torayishi',g:'Ogohlantiruvchi',s:warn(ln('M36 80 L42 62 V40 M64 80 L58 62 V40'))},
+ hump:{n:'Sun’iy notekislik',g:'Ogohlantiruvchi',s:warn(ln('M22 76 H34 Q50 50 66 76 H78',K,6))},
+ curveR:{n:'O‘ngga xavfli burilish',g:'Ogohlantiruvchi',s:warn(ln('M44 80 V56 Q44 44 56 44',K,6)+`<polygon points="56,33 70,44 56,55" fill="${K}"/>`)},
+ twoWay:{n:'Ikki tomonlama harakat',g:'Ogohlantiruvchi',s:warn(ln('M42 80 V46')+`<polygon points="42,34 50,47 34,47" fill="${K}"/>`+ln('M58 40 V72')+`<polygon points="58,84 50,71 66,71" fill="${K}"/>`)},
+ railBar:{n:'To‘siqli temir yo‘l kesishmasi',g:'Ogohlantiruvchi',s:warn(`<rect x="33" y="50" width="34" height="22" fill="none" stroke="${K}" stroke-width="4"/>`+ln('M33 61 H67 M42 50 V72 M50 50 V72 M58 50 V72',K,3))},
+ railX:{n:'Bir yo‘lli temir yo‘l kesishmasi',g:'Ogohlantiruvchi',s:[45,-45].map(a=>`<g transform="rotate(${a} 50 50)"><rect x="6" y="42" width="88" height="16" fill="${W}" stroke="${R}" stroke-width="3"/><rect x="20" y="45" width="14" height="10" fill="${R}"/><rect x="66" y="45" width="14" height="10" fill="${R}"/></g>`).join('')},
+ noentry:{n:'Kirish taqiqlanadi',g:'Taqiqlovchi',s:`<circle cx="50" cy="50" r="46" fill="${R}"/><rect x="17" y="41" width="66" height="18" fill="${W}"/>`},
+ speed40:{n:'Maksimal tezlik cheklovi',g:'Taqiqlovchi',s:prohib(txt('40',38,63))},
+ nostop:{n:'To‘xtash taqiqlanadi',g:'Taqiqlovchi',s:`<circle cx="50" cy="50" r="43" fill="${B}" stroke="${R}" stroke-width="9"/><line x1="22" y1="22" x2="78" y2="78" stroke="${R}" stroke-width="9"/><line x1="78" y1="22" x2="22" y2="78" stroke="${R}" stroke-width="9"/>`},
+ nopark:{n:'To‘xtab turish taqiqlanadi',g:'Taqiqlovchi',s:`<circle cx="50" cy="50" r="43" fill="${B}" stroke="${R}" stroke-width="9"/><line x1="22" y1="22" x2="78" y2="78" stroke="${R}" stroke-width="9"/>`},
+ noovertake:{n:'Quvib o‘tish taqiqlanadi',g:'Taqiqlovchi',s:prohib(`<rect x="25" y="34" width="21" height="34" rx="6" fill="${R}"/><rect x="54" y="34" width="21" height="34" rx="6" fill="${K}"/>`)},
+ noLeft:{n:'Chapga burilish taqiqlanadi',g:'Taqiqlovchi',s:prohib(ln('M60 76 V52 Q60 40 48 40 H40',K,8)+`<polygon points="26,40 42,28 42,52" fill="${K}"/>`)},
+ noUturn:{n:'Qayrilib olish taqiqlanadi',g:'Taqiqlovchi',s:prohib(ln('M62 76 V46 A12 12 0 0 0 38 46 V56',K,8)+`<polygon points="27,54 49,54 38,70" fill="${K}"/>`)},
+ noTrucks:{n:'Yuk avtomobillari harakati taqiqlanadi',g:'Taqiqlovchi',s:prohib(`<rect x="22" y="40" width="36" height="22" fill="${K}"/><path d="M58 47 H70 L77 55 V62 H58 Z" fill="${K}"/><circle cx="32" cy="66" r="5" fill="${K}"/><circle cx="68" cy="66" r="5" fill="${K}"/>`)},
+ noHorn:{n:'Tovush signali berish taqiqlanadi',g:'Taqiqlovchi',s:prohib(`<polygon points="28,43 42,43 64,30 64,70 42,57 28,57" fill="${K}"/><line x1="24" y1="24" x2="76" y2="76" stroke="${R}" stroke-width="7"/>`)},
+ endAll:{n:'Barcha cheklovlarning oxiri',g:'Taqiqlovchi',s:`<circle cx="50" cy="50" r="44" fill="${W}" stroke="${K}" stroke-width="2"/>`+[-12,-4,4,12].map(d=>`<line x1="${28+d}" y1="${72+d}" x2="${72+d}" y2="${28+d}" stroke="#555" stroke-width="3"/>`).join('')},
+ straight:{n:'To‘g‘riga harakatlanish',g:'Buyuruvchi',s:blueC(ln('M50 82 V38',W,11)+`<polygon points="50,15 68,40 32,40" fill="${W}"/>`)},
+ right:{n:'O‘ngga harakatlanish',g:'Buyuruvchi',s:blueC(ln('M40 82 V54 Q40 44 50 44 H60',W,10)+`<polygon points="82,44 60,27 60,61" fill="${W}"/>`)},
+ keepRight:{n:'To‘siqni o‘ngdan aylanib o‘tish',g:'Buyuruvchi',s:blueC(ln('M30 30 L60 60',W,10)+`<polygon points="76,76 50,72 72,50" fill="${W}"/>`)},
+ round:{n:'Aylanma harakat',g:'Buyuruvchi',s:roundArrows()},
+ minSpeed:{n:'Eng kam tezlik cheklovi',g:'Buyuruvchi',s:blueC(txt('30',38,63,W))},
+ crossing:{n:'Piyodalar o‘tish joyi',g:'Axborot',s:blueSq(`<polygon points="50,13 89,85 11,85" fill="${W}"/>`+person(50,62,1.05))},
+ parking:{n:'To‘xtab turish joyi',g:'Axborot',s:blueSq(txt('P',62,72,W))},
+ oneway:{n:'Bir tomonlama yo‘l',g:'Axborot',s:blueSq(ln('M50 86 V38',W,12)+`<polygon points="50,14 72,40 28,40" fill="${W}"/>`)},
+ deadEnd:{n:'Berk ko‘cha',g:'Axborot',s:blueSq(`<rect x="44" y="34" width="12" height="54" fill="${W}"/><rect x="26" y="20" width="48" height="14" fill="${R}"/>`)},
+ bus:{n:'Avtobus bekati',g:'Axborot',s:blueSq(`<rect x="22" y="26" width="56" height="42" rx="7" fill="${W}"/><rect x="28" y="32" width="44" height="15" rx="2" fill="${B}"/><circle cx="35" cy="72" r="6" fill="${W}"/><circle cx="65" cy="72" r="6" fill="${W}"/>`)},
+};
+
+/* top-down intersection scene, 300x200; cars can be animated along their paths in priority order */
+let sceneN=0;
+const COLS={r:'#E0332B',b:'#2F6FE0',y:'#F2B705'};
+function scene(o){
+  const id='s'+(++sceneN);
+  let s=`<defs>${Object.entries(COLS).map(([k,c])=>`<marker id="${id}${k}" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="${c}"/></marker>`).join('')}</defs>`;
+  s+=`<rect width="300" height="200" fill="var(--verge)"/><rect x="115" y="0" width="70" height="200" fill="var(--road)"/><rect x="0" y="65" width="300" height="70" fill="var(--road)"/>`;
+  s+=`<g stroke="#fff" stroke-width="2" stroke-dasharray="10 8" opacity=".75"><line x1="150" y1="0" x2="150" y2="62"/><line x1="150" y1="138" x2="150" y2="200"/>${o.tram?'':'<line x1="0" y1="100" x2="112" y2="100"/><line x1="188" y1="100" x2="300" y2="100"/>'}</g>`;
+  if(o.tram) s+=`<g stroke="#9aa3ae" stroke-width="1.5"><line x1="0" y1="95" x2="300" y2="95"/><line x1="0" y1="105" x2="300" y2="105"/></g>`;
+  if(o.zebra) for(let y=69;y<132;y+=10) s+=`<rect x="192" y="${y}" width="18" height="5" fill="#fff" opacity=".85"/>`;
+  o.cars.forEach((v,i)=>{ if(v.p) s+=`<path data-path="${i}" d="${v.p}" fill="none" stroke="${COLS[v.c]}" stroke-width="3" stroke-dasharray="6 5" marker-end="url(#${id}${v.c})"/>`; });
+  o.cars.forEach((v,i)=>{
+    const body=v.tram?`<rect x="-10" y="-34" width="20" height="68" rx="5" fill="${COLS.y}" stroke="#7a5c00" stroke-width="1"/><rect x="-7" y="-30" width="14" height="8" rx="2" fill="#cfe3ff"/>`
+      :v.ped?`<circle r="7" fill="${COLS.y}" stroke="#111" stroke-width="2"/>`
+      :`<rect x="-9" y="-15" width="18" height="30" rx="5" fill="${COLS[v.c]}"/><rect x="-7" y="-9" width="14" height="7" rx="2" fill="#d5e6ff" opacity=".9"/>`;
+    s+=`<g data-car="${i}" transform="translate(${v.x} ${v.y}) rotate(${v.r||0})">${body}</g>`;
+    if(v.l) s+=`<g transform="translate(${v.lx} ${v.ly})"><rect x="-19" y="-9" width="38" height="18" rx="9" fill="#111a"/><text y="4" text-anchor="middle" font-family="Onest,Arial,sans-serif" font-size="10" font-weight="700" fill="#fff">${v.l}</text></g>`;
+  });
+  for(const g of (o.signs||[])) s+=`<svg x="${g.x}" y="${g.y}" width="26" height="26" viewBox="0 0 100 100">${SIGNS[g.t].s}</svg>`;
+  return svg(s,'0 0 300 200');
+}
+let animId=0;
+function animateScene(root,o,loop){
+  if(REDUCE||!root||!o.order) return;
+  const my=++animId, el=root.querySelector('svg'); if(!el) return;
+  const seq=o.order.map(i=>({i,g:el.querySelector(`[data-car="${i}"]`),p:el.querySelector(`[data-path="${i}"]`),v:o.cars[i]})).filter(x=>x.g&&x.p);
+  const per=2300, gap=350, total=seq.length*(per+gap)+1200;
+  const t0=performance.now();
+  function place(x,f){const L=x.p.getTotalLength(),a=x.p.getPointAtLength(f*L),b=x.p.getPointAtLength(Math.min(L,f*L+1)),c=f*L>=L-1?x.p.getPointAtLength(L-1):a;
+    const d=f*L>=L-1?{x:a.x-c.x,y:a.y-c.y}:{x:b.x-a.x,y:b.y-a.y};
+    const rot=x.v.ped?0:Math.atan2(d.y,d.x)*180/Math.PI+90;
+    x.g.setAttribute('transform',`translate(${a.x} ${a.y}) rotate(${rot})`);}
+  function frame(now){
+    if(my!==animId||!el.isConnected) return;
+    let t=now-t0; if(loop) t%=total; else if(t>total) t=total;
+    seq.forEach((x,k)=>{const st=k*(per+gap); if(t<st){x.g.setAttribute('transform',`translate(${x.v.x} ${x.v.y}) rotate(${x.v.r||0})`);return}
+      const f=Math.min(1,(t-st)/per); place(x,f*f*(3-2*f));});
+    if(loop||t<total) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+}
+const BLUE_UP={x:167,y:178,r:0,c:'b',l:'Siz',lx:202,ly:180,p:'M167 160 V18'};
+const RED_RIGHT={x:268,y:84,r:-90,c:'r',l:'Qizil',lx:268,ly:58,p:'M250 84 H18'};
+const RED_LEFT={x:32,y:116,r:90,c:'r',l:'Qizil',lx:32,ly:146,p:'M50 116 H286'};
+const SC={
+ right:{cars:[BLUE_UP,RED_RIGHT],order:[1,0]},
+ left:{cars:[{...BLUE_UP,p:'M167 160 V122 Q167 84 128 84 H16'},{x:133,y:24,r:180,c:'r',l:'Qizil',lx:96,ly:22,p:'M133 42 V186'}],order:[1,0]},
+ main:{cars:[BLUE_UP,RED_RIGHT],signs:[{t:'main',x:192,y:140},{t:'giveway',x:218,y:30}],order:[0,1]},
+ tram:{tram:true,cars:[BLUE_UP,{x:42,y:100,r:90,tram:true,c:'y',l:'Tramvay',lx:42,ly:76,p:'M78 100 H286'}],order:[1,0]},
+ fromLeft:{cars:[BLUE_UP,RED_LEFT],order:[0,1]},
+ secondary:{cars:[BLUE_UP,RED_LEFT],signs:[{t:'giveway',x:192,y:140},{t:'main',x:66,y:140}],order:[1,0]},
+ ped:{zebra:true,cars:[{...BLUE_UP,p:'M167 160 V142 Q167 116 194 116 H290'},{x:201,y:56,ped:true,c:'y',l:'Piyoda',lx:236,ly:52,p:'M201 66 V146'}],order:[1,0]},
+};
+
+const TOPICS={belgi:'Yo‘l belgilari',chorraha:'Chorrahalar va svetofor',tezlik:'Tezlik, to‘xtash va masofa',qoida:'Harakat qoidalari',xavf:'Xavfsizlik va tibbiyot'};
+const sq=(id,sig,a,e,q)=>({id,t:'belgi',q:q||'Bu belgi nimani bildiradi?',sign:sig,a,e});
+const BASE=[
+ sq(1,'stop',['To‘xtamasdan o‘tish taqiqlanadi','To‘xtab turish taqiqlanadi','Yo‘l bering','Harakat taqiqlanadi'],'Haydovchi to‘xtash chizig‘i oldida, u bo‘lmasa kesishayotgan yo‘l chetida albatta to‘xtashi va yo‘l berishi shart.'),
+ sq(2,'giveway',['Yo‘l bering','Asosiy yo‘l','Ehtiyot bo‘ling, xavfli joy','Kirish taqiqlanadi'],'Kesishayotgan yo‘lda harakatlanayotgan transport vositalariga yo‘l berasiz. To‘xtash shart emas, lekin yo‘l berish majburiy.'),
+ sq(3,'main',['Asosiy yo‘l','Asosiy yo‘lning oxiri','Yo‘l bering','Avtomagistral'],'Siz asosiy yo‘ldasiz: tartibga solinmagan chorrahalarda ikkinchi darajali yo‘ldan chiqayotganlar sizga yo‘l beradi.'),
+ sq(4,'mainEnd',['Asosiy yo‘lning oxiri','Asosiy yo‘l','Barcha cheklovlarning oxiri','Ikkinchi darajali yo‘l bilan kesishish'],'Bu belgidan keyin asosiy yo‘l imtiyozi tugaydi.'),
+ sq(5,'noentry',['Kirish taqiqlanadi','Harakat taqiqlanadi','To‘xtash taqiqlanadi','Bir tomonlama yo‘l'],'Barcha transport vositalarining shu yo‘nalishga kirishi taqiqlanadi.'),
+ sq(6,'speed40',['40 km/soatdan oshmagan tezlikda','Kamida 40 km/soat tezlikda','Faqat yuk avtomobillari uchun 40 km/soat','Tavsiya etilgan tezlik 40 km/soat'],'Bu belgi maksimal tezlikni cheklaydi. Tavsiya etilgan tezlik belgisi ko‘k to‘rtburchak shaklida bo‘ladi.','Bu belgi o‘rnatilgan joyda qanday tezlikda harakatlanish mumkin?'),
+ sq(7,'nostop',['To‘xtash taqiqlanadi','To‘xtab turish taqiqlanadi','Kirish taqiqlanadi','Harakat taqiqlanadi'],'Bu joyda har qanday to‘xtash ham, to‘xtab turish ham taqiqlanadi.'),
+ sq(8,'nopark',['To‘xtab turish taqiqlanadi, to‘xtash mumkin','To‘xtash ham, to‘xtab turish ham taqiqlanadi','Avtoturargoh','Kirish taqiqlanadi'],'Yo‘lovchini tushirish yoki yuk ortish uchun qisqa to‘xtash mumkin, ammo uzoq turish taqiqlanadi.'),
+ sq(9,'crossing',['Piyodalar o‘tish joyi','Ehtiyot bo‘ling, piyodalar','Piyodalar yo‘lagi','Bolalar'],'Ko‘k to‘rtburchak belgi o‘tish joyining o‘zini ko‘rsatadi. Bu yerda piyodalarga yo‘l berish shart.'),
+ sq(10,'children',['Bolalar','Piyodalar o‘tish joyi','Piyodalar harakati taqiqlanadi','Maktab avtobusi bekati'],'Yo‘lga bolalar chiqib qolishi mumkin bo‘lgan joy. Tezlikni kamaytiring va diqqatli bo‘ling.'),
+ sq(11,'railX',['Bir yo‘lli temir yo‘l kesishmasi','Ko‘p yo‘lli temir yo‘l kesishmasi','To‘siqli temir yo‘l kesishmasi','To‘xtash taqiqlanadi'],'To‘siqsiz bir yo‘lli temir yo‘l kesishmasi oldidan o‘rnatiladi. Poyezdga har doim yo‘l beriladi.'),
+ sq(12,'round',['Aylanma harakat','Burilish taqiqlanadi','Qayrilib olish joyi','Faqat o‘ngga burilish'],'Aylanma harakatli chorraha: harakat strelkalar yo‘nalishida, soat miliga teskari tomonga amalga oshiriladi.'),
+ sq(13,'noovertake',['Quvib o‘tish taqiqlanadi','Yuk avtomobillari harakati taqiqlanadi','Ikki qatorda harakatlanish','Oraliq masofani saqlang'],'Belgi ta’sir hududida transport vositalarini quvib o‘tish taqiqlanadi (sekin yuruvchi transport bundan mustasno).'),
+ sq(14,'lights',['Svetofor bilan tartibga solish','Svetofor ishlamayapti','Temir yo‘l kesishmasi','Tartibga solinmagan chorraha'],'Oldinda svetofor bilan tartibga solinadigan chorraha, piyodalar o‘tish joyi yoki yo‘l qismi bor.'),
+ sq(15,'straight',['Faqat to‘g‘riga harakatlanish','Bir tomonlama yo‘l','Asosiy yo‘l','Tavsiya etilgan yo‘nalish'],'Buyuruvchi belgi: shu joydan faqat to‘g‘riga yurish mumkin.'),
+ sq(16,'parking',['To‘xtab turish joyi (avtoturargoh)','Pullik yo‘l','Piyodalar zonasi','Yo‘l politsiyasi posti'],'Transport vositalarini to‘xtatib qo‘yish uchun ajratilgan joy.'),
+ sq(41,'pedWarn',['Oldinda piyodalar o‘tish joyi','Piyodalar o‘tish joyining o‘zi','Piyodalar harakati taqiqlanadi','Piyodalar yo‘lkasi'],'Uchburchak ogohlantiruvchi belgi: oldinda o‘tish joyi bor. Ko‘k to‘rtburchak belgi esa o‘tish joyining o‘zida turadi.'),
+ sq(42,'slippery',['Sirpanchiq yo‘l','Notekis yo‘l','Xavfli burilish','Yo‘l ishlari'],'Yo‘l qoplamasi sirpanchiq bo‘lishi mumkin. Tezlikni kamaytiring, keskin tormoz bermang.'),
+ sq(43,'narrow',['Yo‘lning torayishi','Ikki tomonlama harakat','Ko‘prik','Yo‘lning kengayishi'],'Oldinda yo‘l ikki tomondan torayadi.'),
+ sq(44,'hump',['Sun’iy notekislik','Tik qiyalik','Ko‘prik','Tunnel'],'Oldinda tezlikni majburan kamaytirish uchun qilingan sun’iy notekislik bor.'),
+ sq(45,'curveR',['O‘ngga xavfli burilish','Faqat o‘ngga harakatlanish','O‘ngga burilish taqiqlanadi','Aylanma harakat'],'Ogohlantiruvchi belgi: oldinda ko‘rinishi cheklangan o‘ngga burilish bor.'),
+ sq(46,'twoWay',['Ikki tomonlama harakat','Bir tomonlama yo‘l','Qayrilib olish joyi','Qarama-qarshi harakatga imtiyoz'],'Bir tomonlama yo‘l tugab, oldinda qarama-qarshi harakat boshlanadi.'),
+ sq(47,'railBar',['To‘siqli temir yo‘l kesishmasi','To‘siqsiz temir yo‘l kesishmasi','Yo‘l ishlari','Ko‘prik'],'Oldinda shlagbaumli temir yo‘l kesishmasi bor.'),
+ sq(48,'noLeft',['Chapga burilish taqiqlanadi','Faqat chapga harakatlanish','Qayrilib olish taqiqlanadi','Chapga xavfli burilish'],'Chapga burilish taqiqlanadi, lekin qayrilib olishga ruxsat beriladi.'),
+ sq(49,'noUturn',['Qayrilib olish taqiqlanadi','Chapga burilish taqiqlanadi','Orqaga yurish taqiqlanadi','Aylanma harakat'],'Bu belgi qayrilib olishni taqiqlaydi. Chapga burilish mumkin.'),
+ sq(50,'noTrucks',['Yuk avtomobillari harakati taqiqlanadi','Avtobuslar harakati taqiqlanadi','Barcha transport harakati taqiqlanadi','Yuk avtomobillari uchun to‘xtab turish joyi'],'Belgi ta’sir hududiga yuk avtomobillari kirishi taqiqlanadi.'),
+ sq(51,'noHorn',['Tovush signali berish taqiqlanadi','Tovush signali berish majburiy','Shovqinli hudud','Radio eshitish taqiqlanadi'],'Tovush signalidan faqat yo‘l-transport hodisasining oldini olish uchun foydalanish mumkin.'),
+ sq(52,'endAll',['Barcha cheklovlarning oxiri','Harakat taqiqlanadi','Asosiy yo‘lning oxiri','Aholi punktining oxiri'],'Oldingi taqiqlovchi belgilar (tezlik, quvib o‘tish va boshqalar) ta’siri tugaydi.'),
+ sq(53,'right',['Faqat o‘ngga harakatlanish','O‘ngga xavfli burilish','O‘ngga burilish taqiqlanadi','Bir tomonlama yo‘l'],'Buyuruvchi belgi: faqat o‘ngga yurish mumkin.'),
+ sq(54,'keepRight',['To‘siqni o‘ng tomondan aylanib o‘tish','O‘ngga burilish','Yo‘lning torayishi','Qatorni almashtirish taqiqlanadi'],'To‘siq yoki yo‘l ajratuvchi bo‘lakni faqat o‘ng tomondan aylanib o‘tish mumkin.'),
+ sq(55,'minSpeed',['Eng kam tezlik — 30 km/soat','Maksimal tezlik — 30 km/soat','Tavsiya etilgan tezlik — 30 km/soat','30 metr masofa saqlang'],'Ko‘k buyuruvchi belgi: 30 km/soatdan sekin yurish mumkin emas.','Ko‘k doiradagi «30» belgisi nimani bildiradi?'),
+ sq(56,'oneway',['Bir tomonlama yo‘l','Faqat to‘g‘riga harakatlanish','Asosiy yo‘l','Avtomagistral'],'Axborot belgisi: yo‘lning butun kengligi bo‘yicha harakat bir yo‘nalishda. «Faqat to‘g‘riga» belgisi esa ko‘k doira shaklida.'),
+ sq(57,'deadEnd',['Berk ko‘cha','Kirish taqiqlanadi','Bir tomonlama yo‘l','To‘xtash joyi'],'Oldinda o‘tish imkoni bo‘lmagan yo‘l.'),
+ sq(58,'bus',['Avtobus bekati','Avtobuslar uchun yo‘lak','Avtobuslar harakati taqiqlanadi','Avtovokzal'],'Yo‘nalishli transport bekati. Bekatdan 15 m dan yaqin joyda to‘xtash taqiqlanadi.'),
+
+ {id:17,t:'tezlik',q:'Aholi punktlarida yengil avtomobil uchun ruxsat etilgan eng yuqori tezlik qancha (belgi bilan boshqacha ko‘rsatilmagan bo‘lsa)?',a:['70 km/soat','60 km/soat','90 km/soat','50 km/soat'],e:'Aholi punktlarida harakat tezligi 70 km/soatdan oshmasligi kerak.'},
+ {id:18,t:'tezlik',q:'Turar joy hududlari va hovlilarda harakat tezligi qancha bo‘lishi kerak?',a:['20 km/soatdan oshmasligi','40 km/soatdan oshmasligi','10 km/soatdan oshmasligi','Cheklanmagan'],e:'Turar joy hududlari va hovlilarda 20 km/soatdan oshmagan tezlikda harakatlaniladi, piyodalar ustunlikka ega.'},
+ {id:19,t:'tezlik',q:'Avariya to‘xtash belgisi aholi punktidan tashqarida transport vositasidan qancha masofaga qo‘yiladi?',a:['Kamida 30 m','Kamida 15 m','Kamida 5 m','Kamida 50 m'],e:'Aholi punktida kamida 15 m, aholi punktidan tashqarida kamida 30 m masofaga qo‘yiladi.'},
+ {id:26,t:'tezlik',q:'Kesishayotgan yo‘l chetidan qancha masofadan yaqinroqda to‘xtash taqiqlanadi?',a:['5 m','2 m','10 m','20 m'],e:'Chorrahalarda va kesishayotgan yo‘l chetidan 5 m dan yaqin joyda to‘xtash taqiqlanadi.'},
+ {id:28,t:'tezlik',q:'Egiluvchan shatak bilan shatakka olishda transport vositalari orasidagi masofa qancha bo‘lishi kerak?',a:['4–6 m','1–2 m','8–10 m','Ahamiyati yo‘q'],e:'Egiluvchan shatakda masofa 4–6 m, qattiq shatakda 4 m dan oshmasligi kerak.'},
+ {id:60,t:'tezlik',q:'Yo‘nalishli transport bekatidan qancha masofadan yaqinroqda to‘xtash taqiqlanadi?',a:['15 m','5 m','30 m','50 m'],e:'Bekat belgisidan yoki maydonchadan 15 m dan yaqin joyda to‘xtash taqiqlanadi.'},
+ {id:61,t:'tezlik',q:'Piyodalar o‘tish joyida va undan oldin qancha masofada to‘xtash taqiqlanadi?',a:['O‘tish joyida va undan 5 m oldin','Faqat o‘tish joyining o‘zida','O‘tish joyidan 20 m oldin','Taqiqlanmaydi'],e:'Piyodalar o‘tish joyida va undan 5 m dan yaqin joyda to‘xtash taqiqlanadi.'},
+ {id:62,t:'tezlik',q:'Temir yo‘l kesishmasidan qancha masofada to‘xtash taqiqlanadi?',a:['Kesishmada va undan 50 m dan yaqin joyda','Faqat kesishmaning o‘zida','Kesishmadan 10 m dan yaqin joyda','Taqiqlanmaydi'],e:'Temir yo‘l kesishmasida va undan 50 m dan yaqin masofada to‘xtash taqiqlanadi.'},
+ {id:63,t:'tezlik',q:'Shlagbaum va to‘xtash chizig‘i bo‘lmagan temir yo‘l kesishmasi oldida qayerda to‘xtash kerak?',a:['Eng yaqin relsdan kamida 10 m oldin','Relsning ustida','Eng yaqin relsdan 1 m oldin','Kesishmadan o‘tib to‘xtash kerak'],e:'Shlagbaum yoki svetofor bo‘lsa ulardan oldin, bo‘lmasa eng yaqin relsdan kamida 10 m oldin to‘xtaladi.'},
+ {id:64,t:'tezlik',q:'Qattiq shatak bilan shatakka olishda transport vositalari orasidagi masofa qancha bo‘lishi kerak?',a:['4 m dan oshmasligi','4–6 m','8 m dan kam bo‘lmasligi','Cheklanmagan'],e:'Qattiq shatakda masofa 4 m dan oshmasligi kerak.'},
+ {id:65,t:'tezlik',q:'Uzoqni yorituvchi chiroqlarni yaqinni yorituvchiga qachon almashtirish kerak?',a:['Qarama-qarshi transportgacha kamida 150 m qolganda','Qarama-qarshi transport yonidan o‘tayotganda','50 m qolganda','Almashtirish shart emas'],e:'Qarama-qarshi transport vositasiga kamida 150 m qolganda yaqin chiroqqa o‘tiladi. Haydovchi chiroqlarni almashtirib ishora qilsa, undan oldinroq ham almashtiriladi.'},
+ {id:66,t:'tezlik',q:'Ko‘prik, estakada va tunnellarda to‘xtash mumkinmi?',a:['Taqiqlanadi','Mumkin','Faqat tunda mumkin','Faqat avariya chiroqlari yoqilganda mumkin'],e:'Ko‘priklarda, estakadalarda, ularning ostida va tunnellarda to‘xtash taqiqlanadi.'},
+
+ {id:20,t:'xavf',q:'Xavfsizlik kamarini kim taqishi shart?',a:['Haydovchi va kamar o‘rnatilgan o‘rindiqlardagi barcha yo‘lovchilar','Faqat haydovchi','Faqat oldingi o‘rindiqdagilar','Faqat trassada harakatlanganda'],e:'Kamar o‘rnatilgan bo‘lsa, haydovchi ham, yo‘lovchilar ham uni taqishi shart.'},
+ {id:29,t:'xavf',q:'Ho‘l yo‘lda tormozlanish masofasi qanday o‘zgaradi?',a:['Ortadi','Kamayadi','O‘zgarmaydi','Faqat yuk avtomobillarida ortadi'],e:'G‘ildirakning yo‘l bilan ilashishi kamayadi, shuning uchun masofa ortadi. Tezlikni oldindan kamaytiring.'},
+ {id:30,t:'xavf',q:'Hushsiz, lekin nafas olayotgan jabrlanuvchini qanday holatda yotqizish kerak?',a:['Yon tomonga, barqaror holatda','Chalqancha, boshini ko‘tarib','Qorni bilan, qo‘llarini yoyib','O‘tirgan holatda'],e:'Yon holatda til nafas yo‘lini to‘sib qo‘yishining va qusuq nafas yo‘liga tushishining oldi olinadi.'},
+ {id:32,t:'xavf',q:'Harakatlanayotganda telefondan qanday foydalanish mumkin?',a:['Faqat qo‘lni band qilmaydigan qurilma (garnitura) orqali','Qo‘lda ushlab gaplashish mumkin','Tirbandlikda xabar yozish mumkin','Faqat tunda'],e:'Qo‘lda ushlab foydalanish diqqatni chalg‘itadi va taqiqlanadi.'},
+ {id:70,t:'xavf',q:'Arterial qon ketishda (qon otilib chiqmoqda) birinchi yordam qanday ko‘rsatiladi?',a:['Jarohatdan yuqoriroqqa jgut qo‘yiladi','Jarohatdan pastroqqa jgut qo‘yiladi','Jarohat suv bilan yuviladi','Hech narsa qilinmaydi, tez yordam kutiladi'],e:'Arterial qon ketishda jgut jarohatdan yuqoriroqqa qo‘yiladi va qo‘yilgan vaqt yozib qo‘yiladi.'},
+ {id:71,t:'xavf',q:'Jgut qo‘yilgan vaqt qanday qayd etiladi?',a:['Vaqt yozilgan qog‘oz jgut ostiga qo‘yiladi','Eslab qolinadi','Qayd etish shart emas','Jabrlanuvchiga aytib qo‘yiladi'],e:'Shifokorlar jgut qancha vaqt turganini bilishi kerak, shuning uchun vaqt yozib qo‘yiladi.'},
+ {id:72,t:'xavf',q:'Kuyishda birinchi yordam qanday ko‘rsatiladi?',a:['Kuygan joy sovuq suv bilan sovutiladi, pufakchalar yorilmaydi','Pufakchalar yoriladi','Kuygan joyga moy surtiladi','Kuygan joy issiq suv bilan yuviladi'],e:'Sovuq suv to‘qimalar zararlanishini kamaytiradi. Pufakchalarni yorish infeksiyaga olib keladi.'},
+ {id:73,t:'xavf',q:'Suyak sinishida birinchi yordam nimadan iborat?',a:['Shina yordamida singan joyni harakatsizlantirish','Suyakni joyiga solishga urinish','Jabrlanuvchini yurishga majburlash','Singan joyni uqalash'],e:'Singan joy qo‘l ostidagi buyumlar bilan qimirlamaydigan qilib mahkamlanadi.'},
+ {id:74,t:'xavf',q:'Yurakni bilvosita massaj qilishda bosishlar va sun’iy nafas nisbati qanday?',a:['30 ta bosish : 2 ta nafas','5 ta bosish : 1 ta nafas','15 ta bosish : 5 ta nafas','10 ta bosish : 10 ta nafas'],e:'Kattalar uchun 30 ta ko‘krak qafasini bosish va 2 ta sun’iy nafas navbatlashadi.'},
+ {id:75,t:'xavf',q:'Muzli yo‘lda avtomobilning orqa qismi yon tomonga sirpanib ketdi. Nima qilish kerak?',a:['Rulni sirpanish tomoniga burish','Rulni sirpanishga qarama-qarshi tomonga burish','Keskin tormoz berish','Gazni keskin bosish'],e:'Rulni sirpanish tomoniga burib, avtomobil yo‘nalishini tiklaysiz. Keskin tormoz sirpanishni kuchaytiradi.'},
+ {id:76,t:'xavf',q:'Qarama-qarshi transport chiroqlari ko‘zingizni qamashtirsa nima qilasiz?',a:['Avariya signalini yoqib, qatorni almashtirmasdan sekinlashib to‘xtayman','Uzoq chiroqni yoqib javob beraman','Tezlikni oshiraman','Chap qatorga o‘taman'],e:'Ko‘z qamashganda avariya yorug‘lik signali yoqiladi, qator o‘zgartirilmasdan tezlik kamaytiriladi yoki to‘xtaladi.'},
+ {id:77,t:'xavf',q:'Mastlik holatida transport vositasini boshqarish mumkinmi?',a:['Taqiqlanadi','Ozgina ichgan bo‘lsa mumkin','Faqat qisqa masofaga mumkin','Tunda mumkin'],e:'Alkogol, giyohvandlik yoki boshqa mastlik holatida transport boshqarish taqiqlanadi.'},
+ {id:78,t:'xavf',q:'12 yoshgacha bo‘lgan bolani old o‘rindiqda qanday tashish mumkin?',a:['Faqat maxsus bolalar ushlab turuvchi qurilmasida','Kattalar tizzasida','Xavfsizlik kamarisiz','Mumkin emas, hech qanday holatda'],e:'12 yoshgacha bolalarni old o‘rindiqda faqat maxsus ushlab turuvchi qurilmada tashish mumkin.'},
+ {id:79,t:'xavf',q:'Yengil avtomobilda qanday jihozlar bo‘lishi shart?',a:['Dori qutisi (aptechka), o‘t o‘chirgich va avariya to‘xtash belgisi','Faqat zaxira g‘ildirak','Faqat o‘t o‘chirgich','Hech qanday jihoz shart emas'],e:'Aptechka, o‘t o‘chirgich va avariya to‘xtash belgisi har bir avtomobilda bo‘lishi kerak.'},
+ {id:80,t:'xavf',q:'Charchagan yoki kasal holda haydash mumkinmi?',a:['Yo‘q, harakat xavfsizligiga xavf soladigan holatda boshqarish taqiqlanadi','Ha, agar shoshilinch bo‘lsa','Ha, sekin yursa','Faqat kunduzi mumkin'],e:'Reaksiya va diqqatni pasaytiradigan charchoq yoki kasallik holatida transport boshqarish taqiqlanadi.'},
+
+ {id:21,t:'chorraha',q:'Tartibga soluvchi qo‘lini yuqoriga ko‘tardi. Bu nimani bildiradi?',a:['Hamma to‘xtashi kerak (chorrahaga kirib bo‘lganlardan tashqari)','Faqat piyodalar to‘xtaydi','To‘g‘riga harakatlanish mumkin','Faqat o‘ngga burilish mumkin'],e:'Yuqoriga ko‘tarilgan qo‘l barcha yo‘nalishlar uchun harakatni taqiqlaydi. Chorrahaga kirib bo‘lganlar harakatni davom ettiradi.'},
+ {id:22,t:'chorraha',q:'Svetoforning sariq miltillovchi chirog‘i nimani bildiradi?',a:['Chorraha tartibga solinmagan, ehtiyot bo‘lib harakatlaning','Harakat taqiqlanadi','Tez orada yashil chiroq yonadi','Faqat piyodalar o‘tadi'],e:'Bunda chorraha tartibga solinmagan hisoblanadi: imtiyoz belgilari va qoidalariga amal qilinadi.'},
+ {id:23,t:'chorraha',q:'Qizil chiroq yonib turganida qo‘shimcha seksiyadagi yashil strelka yondi. Nima qilasiz?',a:['Strelka yo‘nalishida yuraman, boshqa yo‘nalishdagilarga yo‘l berib','To‘xtab turaman','Istalgan yo‘nalishda yuraman','Ovozli signal berib o‘taman'],e:'Qo‘shimcha seksiya strelkasi bo‘yicha yurish mumkin, lekin boshqa yo‘nalishlardan kelayotganlarga yo‘l berish shart.'},
+ {id:81,t:'chorraha',q:'Yashil chiroq miltillay boshladi. Bu nimani bildiradi?',a:['Harakatga ruxsat bor, lekin tez orada taqiqlovchi signal yonadi','Harakat taqiqlanadi','Svetofor ishlamayapti','Faqat piyodalar o‘tishi mumkin'],e:'Miltillovchi yashil chiroq ruxsat vaqti tugayotganini bildiradi.'},
+ {id:82,t:'chorraha',q:'Sariq chiroq yondi, lekin keskin tormoz bermasdan to‘xtash chizig‘i oldida to‘xtay olmaysiz. Nima qilasiz?',a:['Harakatni davom ettiraman','Keskin tormoz beraman','Orqaga yuraman','Chorraha o‘rtasida to‘xtayman'],e:'Favqulodda tormozlanmasdan to‘xtash imkoni bo‘lmasa, sariq chiroqda harakatni davom ettirish mumkin.'},
+ {id:83,t:'chorraha',q:'Tartibga soluvchi qo‘llarini yon tomonga yozgan. Uning ko‘kragi yoki orqasi tomonidan kelayotgan transport uchun bu nimani bildiradi?',a:['Harakat taqiqlanadi','To‘g‘riga yurish mumkin','Faqat o‘ngga burilish mumkin','Istalgan yo‘nalishda yurish mumkin'],e:'Ko‘krak va orqa tomondan kelayotganlar uchun harakat taqiqlanadi; yon tomondan kelayotganlar to‘g‘riga va o‘ngga yura oladi.'},
+ {id:84,t:'chorraha',q:'Svetofor va tartibga soluvchi signallari bir-biriga zid bo‘lsa, qaysi biriga amal qilinadi?',a:['Tartibga soluvchi signaliga','Svetofor signaliga','Yo‘l belgilariga','O‘zingiz tanlaysiz'],e:'Tartibga soluvchi signallari svetofor, belgilar va chiziqlardan ustun turadi.'},
+ {id:85,t:'chorraha',q:'Chorrahadan keyin tirbandlik bo‘lsa, yashil chiroqda chorrahaga kirish mumkinmi?',a:['Yo‘q, ko‘ndalang harakatga to‘sqinlik qilib chorrahaga kirish taqiqlanadi','Ha, yashil chiroq yonib turibdi','Ha, avariya chirog‘ini yoqib','Faqat o‘ngga burilish uchun'],e:'Chorrahada to‘xtab qolib, boshqa yo‘nalishlar harakatiga to‘sqinlik qiladigan bo‘lsa, unga kirish taqiqlanadi.'},
+ {id:86,t:'chorraha',q:'Hovlidan yoki yo‘ldan tashqaridagi hududdan yo‘lga chiqayotganda kimga yo‘l berish kerak?',a:['Yo‘lda harakatlanayotgan transport va piyodalarga','Hech kimga','Faqat piyodalarga','Faqat o‘ng tomondan kelayotganlarga'],e:'Hovli va yo‘l yonidagi hududlardan chiqayotgan haydovchi barchaga yo‘l beradi.'},
+
+ {id:24,t:'qoida',q:'Ko‘k miltillovchi chiroq va maxsus tovush signali yoqilgan avtomobil yaqinlashmoqda. Nima qilasiz?',a:['Yo‘l beraman va unga to‘sqinlik qilmayman','Tezlikni oshirib, oldinda ketaman','Odatdagidek harakatni davom ettiraman','Yo‘lning o‘rtasida darhol to‘xtayman'],e:'Maxsus signallari yoqilgan transport vositasiga yo‘l berish majburiy.'},
+ {id:25,t:'qoida',q:'Orqaga yurish qayerda taqiqlanadi?',a:['Chorrahalar, piyodalar o‘tish joylari, ko‘priklar, tunnellar va temir yo‘l kesishmalarida','Faqat avtomagistrallarda','Faqat tunda','Hech qayerda taqiqlanmaydi'],e:'Shuningdek ko‘rinish cheklangan joylarda ham orqaga yurish taqiqlanadi.'},
+ {id:27,t:'qoida',q:'Quvib o‘tish qayerda taqiqlanadi?',a:['Piyodalar o‘tish joylarida, temir yo‘l kesishmalarida va ulardan 100 m oldin','Faqat ko‘priklarda','To‘g‘ri va keng yo‘lda','Faqat tunda'],e:'Shuningdek ko‘prik, estakada, tunnellarda va ko‘rinish cheklangan joylarda ham quvib o‘tish taqiqlanadi.'},
+ {id:31,t:'qoida',q:'Tartibga solinmagan piyodalar o‘tish joyida piyoda yo‘lga chiqdi. Haydovchi nima qilishi kerak?',a:['Tezlikni kamaytirib yoki to‘xtab, piyodaga yo‘l berishi','Ovozli signal berib o‘tishi','Piyodani aylanib o‘tishi','Tezlikni oshirib o‘tib ketishi'],e:'O‘tish joyidagi piyodaga yo‘l berish haydovchining majburiyati.'},
+ {id:90,t:'qoida',q:'Quvib o‘tish odatda qaysi tomondan amalga oshiriladi?',a:['Chap tomondan','O‘ng tomondan','Istalgan tomondan','Yo‘l yoqasidan'],e:'Quvib o‘tish chapdan bajariladi. Chapga burilish ishorasini bergan transportni esa o‘ngdan quvib o‘tiladi.'},
+ {id:91,t:'qoida',q:'Sizni quvib o‘tishayotganda nima qilish taqiqlanadi?',a:['Tezlikni oshirish yoki boshqacha to‘sqinlik qilish','Tezlikni kamaytirish','O‘ng chetga yaqinlashish','Harakatni davom ettirish'],e:'Quvib o‘tilayotgan haydovchi tezlikni oshirishi yoki to‘sqinlik qilishi taqiqlanadi.'},
+ {id:92,t:'qoida',q:'O‘ngga burilish qaysi holatdan bajariladi?',a:['Yo‘lning eng o‘ng chetidagi holatdan','Istalgan qatordan','Chap qatordan','Yo‘lning o‘rtasidan'],e:'O‘ngga burilish iloji boricha o‘ng chetdan bajariladi.'},
+ {id:93,t:'qoida',q:'Burilish ko‘rsatkichini qachon yoqish kerak?',a:['Manyovr boshlanishidan oldin, oldindan','Manyovr paytida','Manyovrdan keyin','Faqat tunda'],e:'Ko‘rsatkich manyovr boshlanishidan oldin yoqiladi va u tugagach o‘chiriladi. U imtiyoz bermaydi.'},
+ {id:94,t:'qoida',q:'Ikki transport bir vaqtda qator almashtirmoqda. Kim yo‘l beradi?',a:['Chapdagi haydovchi o‘ng tomondagiga yo‘l beradi','O‘ngdagi haydovchi chapdagiga','Kim tezroq bo‘lsa, o‘sha o‘tadi','Ikkalasi to‘xtaydi'],e:'Yonma-yon harakatlanib, bir vaqtda qator almashtirishda o‘ng tomondagi transportga yo‘l beriladi.'},
+ {id:95,t:'qoida',q:'Avtomagistralda nima taqiqlanadi?',a:['Qayrilib olish va orqaga yurish','70 km/soat tezlikda yurish','Chap qatorda quvib o‘tish','Yaqin chiroqlarni yoqish'],e:'Avtomagistralda qayrilib olish, ajratuvchi bo‘lakdagi uzilishlarga kirish va orqaga yurish taqiqlanadi.'},
+ {id:96,t:'qoida',q:'Yo‘lovchilarni qaysi tomondan tushirish kerak?',a:['Trotuar yoki yo‘l yoqasi tomondan','Qatnov qismi tomondan','Istalgan tomondan','Faqat chap tomondan'],e:'Yo‘lovchilar trotuar yoki yo‘l yoqasi tomondan tushiriladi, bu xavfsiz.'},
+ {id:97,t:'qoida',q:'Temir yo‘l kesishmasida avtomobil to‘xtab qoldi. Birinchi navbatda nima qilish kerak?',a:['Yo‘lovchilarni tushirib, kesishmani bo‘shatish choralarini ko‘rish','Yordam kelishini kutib, avtomobilda o‘tirish','Avtomobilni qoldirib ketish','Ovozli signal berib turish'],e:'Darhol odamlarni tushirish, kesishmani bo‘shatish va poyezd yaqinlashsa uni to‘xtatish choralarini ko‘rish kerak.'},
+ {id:98,t:'qoida',q:'Oq hassali ko‘zi ojiz piyoda yo‘lni kesib o‘tmoqda. Nima qilasiz?',a:['Tezlikni kamaytirib yoki to‘xtab, unga yo‘l beraman','Ovozli signal beraman','Aylanib o‘taman','Harakatni davom ettiraman'],e:'Oq hassali ko‘zi ojiz piyodaga har qanday joyda yo‘l berish kerak.'},
+ {id:99,t:'qoida',q:'Avariya yorug‘lik signali qachon yoqilishi shart?',a:['Yo‘l-transport hodisasida yoki to‘xtash taqiqlangan joyda majburiy to‘xtaganda','Har doim to‘xtab turganda','Quvib o‘tishdan oldin','Tunda harakatlanganda'],e:'YTH, majburiy to‘xtash, ko‘z qamashishi va shatakka olinganda avariya signali yoqiladi.'},
+ {id:100,t:'qoida',q:'Haydovchi o‘zi bilan qaysi hujjatlarni olib yurishi shart?',a:['Haydovchilik guvohnomasi, qayd etish guvohnomasi (texpasport) va sug‘urta polisi','Faqat pasport','Faqat haydovchilik guvohnomasi','Hech qanday hujjat shart emas'],e:'Bu hujjatlar talab qilinganda tekshirish uchun ko‘rsatiladi.'},
+
+ {id:33,t:'chorraha',q:'Teng ahamiyatli yo‘llar chorrahasi. Kim birinchi o‘tadi?',scene:SC.right,a:['Qizil avtomobil','Siz (ko‘k avtomobil)','Kim birinchi yetib kelsa','Ikkalasi bir vaqtda'],e:'Teng ahamiyatli chorrahada o‘ng tomondan yaqinlashayotgan transportga yo‘l beriladi. Qizil avtomobil sizning o‘ngingizda.'},
+ {id:34,t:'chorraha',q:'Siz chapga burilmoqdasiz. Kim birinchi o‘tadi?',scene:SC.left,a:['Qizil avtomobil','Siz (ko‘k avtomobil)','Kim tezroq bo‘lsa','Ikkalasi bir vaqtda'],e:'Chapga burilayotgan haydovchi qarama-qarshi yo‘nalishdan to‘g‘riga yoki o‘ngga ketayotganlarga yo‘l berishi shart.'},
+ {id:35,t:'chorraha',q:'Belgilarga e’tibor bering. Kim birinchi o‘tadi?',scene:SC.main,a:['Siz (ko‘k avtomobil)','Qizil avtomobil','O‘ng qo‘l qoidasi bo‘yicha qizil','Ikkalasi bir vaqtda'],e:'Siz asosiy yo‘ldasiz, qizil avtomobil oldida «Yo‘l bering» belgisi bor. Belgilar o‘ng qo‘l qoidasidan ustun.'},
+ {id:36,t:'chorraha',q:'Teng ahamiyatli chorraha. Tramvay va sizdan kim birinchi o‘tadi?',scene:SC.tram,a:['Tramvay','Siz (ko‘k avtomobil)','O‘ng qo‘l qoidasi bo‘yicha siz','Kim birinchi yetib kelsa'],e:'Teng ahamiyatli chorrahada tramvay qaysi tomondan kelishidan qat’i nazar relssiz transportdan ustun.'},
+ {id:37,t:'chorraha',q:'Teng ahamiyatli chorraha. Qizil avtomobil chap tomondan kelmoqda. Kim birinchi o‘tadi?',scene:SC.fromLeft,a:['Siz (ko‘k avtomobil)','Qizil avtomobil','Kim birinchi yetib kelsa','Ikkalasi bir vaqtda'],e:'Qizil avtomobil sizning chapingizda, demak u sizga yo‘l beradi: siz uning o‘ng tomonidasiz.'},
+ {id:38,t:'chorraha',q:'Siz ikkinchi darajali yo‘ldasiz. Kim birinchi o‘tadi?',scene:SC.secondary,a:['Qizil avtomobil','Siz (ko‘k avtomobil)','O‘ng qo‘l qoidasi bo‘yicha siz','Ikkalasi bir vaqtda'],e:'Qizil avtomobil asosiy yo‘lda, chap tomondan kelsa ham ustun. Sizning oldingizda «Yo‘l bering» belgisi bor.'},
+ {id:39,t:'chorraha',q:'Siz o‘ngga burilmoqdasiz, piyoda o‘tish joyida yo‘lni kesib o‘tmoqda. Kim birinchi o‘tadi?',scene:SC.ped,a:['Piyoda','Siz (ko‘k avtomobil)','Kim tezroq bo‘lsa','Burilayotgan avtomobil, chunki yashil chiroq'],e:'Burilishda haydovchi o‘zi kirayotgan yo‘lni kesib o‘tayotgan piyodalarga yo‘l berishi shart.'},
+];
+
+/* lessons: narration text split into steps; each step has a visual */
+const LESSONS=[
+ {id:1,title:'Imtiyoz belgilari',topic:'belgi',audio:'audio/l1.mp3',dur:44.9,steps:[
+   ['Birinchi dars: imtiyoz belgilari. Bu belgilar chorrahada kim birinchi o‘tishini belgilaydi.',{signs:['main','giveway','stop']}],
+   ['Sariq romb — «Asosiy yo‘l». Siz asosiy yo‘ldasiz: tartibga solinmagan chorrahalarda ikkinchi darajali yo‘ldan chiqayotganlar sizga yo‘l beradi.',{signs:['main']}],
+   ['Romb ustida qora chiziq bo‘lsa, bu «Asosiy yo‘lning oxiri». Undan keyin imtiyozingiz tugaydi.',{signs:['main','mainEnd']}],
+   ['Uchi pastga qaragan uchburchak — «Yo‘l bering». Kesishayotgan yo‘ldagi transportni o‘tkazib yuborasiz. To‘xtash shart emas, lekin yo‘l berish majburiy.',{signs:['giveway']}],
+   ['Qizil sakkizburchak — «To‘xtamasdan o‘tish taqiqlanadi». Bu yerda har doim to‘liq to‘xtaysiz, keyin yo‘l berib harakatlanasiz.',{signs:['stop']}],
+   ['Eslab qoling: belgilar o‘ng qo‘l qoidasidan ustun turadi.',{scene:'main'}]]},
+ {id:2,title:'Taqiqlovchi va buyuruvchi belgilar',topic:'belgi',audio:'audio/l2.mp3',dur:43.5,steps:[
+   ['Ikkinchi dars: taqiqlovchi va buyuruvchi belgilar. Taqiqlovchi belgilar odatda qizil hoshiyali doira shaklida bo‘ladi.',{signs:['noentry','speed40','noovertake']}],
+   ['Qizil doira ichida oq chiziq — «Kirish taqiqlanadi». Bu yo‘nalishga hech bir transport kira olmaydi.',{signs:['noentry']}],
+   ['Raqamli belgi — maksimal tezlik. Masalan, qirq yozilgan bo‘lsa, soatiga qirq kilometrdan tez yurish mumkin emas.',{signs:['speed40']}],
+   ['Ko‘k doirada qizil xoch — «To‘xtash taqiqlanadi». Bitta qiya chiziq bo‘lsa — «To‘xtab turish taqiqlanadi»: yo‘lovchini tushirish uchun qisqa to‘xtash mumkin.',{signs:['nostop','nopark']}],
+   ['Buyuruvchi belgilar ko‘k doira shaklida bo‘ladi. Ular nima qilishingiz kerakligini ko‘rsatadi: masalan, faqat to‘g‘riga yurish yoki aylanma harakat.',{signs:['straight','round','right']}]]},
+ {id:3,title:'Tartibga solinmagan chorrahalar',topic:'chorraha',audio:'audio/l3.mp3',dur:29.9,steps:[
+   ['Uchinchi dars: tartibga solinmagan chorrahalar.',{scene:'right',still:true}],
+   ['Agar yo‘llar teng ahamiyatli bo‘lsa, o‘ng qo‘l qoidasi ishlaydi: o‘ng tomondan yaqinlashayotgan transportga yo‘l berasiz.',{scene:'right'}],
+   ['Chapga burilayotganda qarama-qarshi tomondan to‘g‘riga yoki o‘ngga ketayotganlarga yo‘l berasiz.',{scene:'left'}],
+   ['Tramvay teng ahamiyatli chorrahada qaysi tomondan kelishidan qat’i nazar ustunlikka ega.',{scene:'tram'}],
+   ['Belgilar bo‘lsa, avval belgilarga qarang: asosiy yo‘ldagi haydovchi birinchi o‘tadi.',{scene:'main'}]]},
+ {id:4,title:'Svetofor va tartibga soluvchi',topic:'chorraha',audio:'audio/l4.mp3',dur:42.3,steps:[
+   ['To‘rtinchi dars: svetofor va tartibga soluvchi.',{tl:'still'}],
+   ['Qizil chiroq harakatni taqiqlaydi. Sariq chiroq ham taqiqlaydi va signal almashishidan ogohlantiradi. Yashil chiroq harakatlanishga ruxsat beradi.',{tl:'cycle'}],
+   ['Sariq chiroq miltillab tursa, chorraha tartibga solinmagan hisoblanadi. Belgilar va imtiyoz qoidalariga amal qiling.',{tl:'flash'}],
+   ['Qizil chiroq yonib turganda qo‘shimcha seksiyada yashil strelka yonsa, strelka yo‘nalishida yurishingiz mumkin, lekin boshqa yo‘nalishdagilarga yo‘l berasiz.',{tl:'arrow'}],
+   ['Tartibga soluvchi qo‘lini yuqoriga ko‘tarsa, hamma to‘xtaydi. Faqat chorrahaga kirib bo‘lganlar harakatni davom ettiradi. Tartibga soluvchi signali svetofordan ustun.',{ctrl:true}]]},
+ {id:5,title:'Tezlik va xavfsizlik',topic:'tezlik',audio:'audio/l5.mp3',dur:35.1,steps:[
+   ['Beshinchi dars: tezlik va xavfsizlik.',{signs:['speed40','minSpeed']}],
+   ['Aholi punktlarida tezlik soatiga yetmish kilometrdan, turar joy hududlari va hovlilarda esa yigirma kilometrdan oshmasligi kerak.',{big:'70 · 20',sub:'km/soat: aholi punktida · hovlilarda'}],
+   ['Chorrahada va kesishayotgan yo‘l chetidan besh metrdan yaqin joyda to‘xtash taqiqlanadi.',{big:'5 m',sub:'chorraha chetidan to‘xtash taqiqlangan masofa'}],
+   ['Avariya to‘xtash belgisi aholi punktida kamida o‘n besh metr, aholi punktidan tashqarida kamida o‘ttiz metr masofaga qo‘yiladi.',{big:'15 m · 30 m',sub:'avariya belgisi: aholi punktida · tashqarida'}],
+   ['Haydovchi ham, yo‘lovchilar ham xavfsizlik kamarini taqishi shart. Ho‘l yo‘lda tormozlanish masofasi ortadi, shuning uchun tezlikni oldindan kamaytiring.',{signs:['slippery']}]]},
+];
+
+/* storage */
+const KEY='yolchi.v1', IKEY='yolchi.import';
+const def=()=>({seen:{},mistakes:[],best:null,exams:0,passed:0,duels:0,wins:0,lessons:{},bilets:{}});
+let D=def();
+try{const r=JSON.parse(localStorage.getItem(KEY));if(r)D=Object.assign(def(),r);}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(D))}catch(e){}};
+let IMPORTED=[];
+try{const r=JSON.parse(localStorage.getItem(IKEY));if(Array.isArray(r))IMPORTED=r;}catch(e){}
+let Q=[];
+const rebuild=()=>{Q=BASE.concat(IMPORTED)};
+rebuild();
+
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $=s=>document.querySelector(s);
+const app=$('#app');
+let S=null, tick=null, AU=null;
+const stopTimer=()=>{if(tick){clearInterval(tick);tick=null}};
+const stopAudio=()=>{if(AU){AU.pause();AU=null}};
+const stopAll=()=>{stopTimer();stopAudio();animId++;};
+const fmt=t=>{t=Math.max(0,Math.floor(t||0));return `${Math.floor(t/60)}:${String(t%60).padStart(2,'0')}`};
+/* bilets: fixed groups of 20 by question id */
+const bilets=()=>{const l=BASE.slice().sort((a,b)=>a.id-b.id),out=[];for(let i=0;i+10<=l.length;i+=20)out.push(l.slice(i,i+20));return out};
+
+const back=`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>`;
+const mark=`<svg class="mark" viewBox="0 0 48 48"><rect width="48" height="48" rx="13" fill="var(--blue)"/><path d="M19 40 L23 10 M29 40 L25 10" stroke="var(--blue-ink)" stroke-width="3" stroke-linecap="round" opacity=".9"/><path d="M24 36v-4M24 27v-4M24 18v-3" stroke="var(--accent)" stroke-width="2.6" stroke-linecap="round"/></svg>`;
+const icon=s=>svg(s).replace('<svg','<svg class="ic"');
+const topbar=(t,right='')=>`<div class="top"><button class="iconbtn" id="bk" aria-label="Orqaga">${back}</button><div class="t">${esc(t)}</div>${right}</div>`;
+
+function home(){
+  stopAll(); S=null;
+  const seen=Object.keys(D.seen).length, okc=Object.values(D.seen).filter(Boolean).length;
+  const acc=seen?Math.round(okc/seen*100):0;
+  const ld=LESSONS.filter(l=>D.lessons[l.id]).length;
+  app.innerHTML=`
+  <header class="brand">${mark}<div><h1>Yo‘lchi</h1><p>Haydovchilik guvohnomasi imtihoniga tayyorgarlik</p></div></header>
+  <section class="panel" aria-label="Natijalaringiz">
+    <div class="stats">
+      <div class="stat"><b>${seen}<span class="muted" style="font-size:13px">/${Q.length}</span></b><span>savol ishlangan</span></div>
+      <div class="stat"><b>${acc}%</b><span>to‘g‘ri javob</span></div>
+      <div class="stat"><b>${D.best==null?'—':D.best+'/20'}</b><span>eng yaxshi imtihon</span></div>
+    </div>
+    <div class="bar"><i style="width:${Math.min(100,Math.round(seen/Q.length*100))}%"></i></div>
+  </section>
+  <button class="hero" id="exam"><div><h2>Imtihon rejimi</h2><p>20 ta savol · 25 daqiqa · 2 tadan ortiq xato mumkin emas</p></div><span class="go">Boshlash</span></button>
+  <div class="tiles">
+    <button class="tile" id="lessons">${icon(`<rect x="6" y="18" width="88" height="64" rx="12" fill="var(--blue)"/><polygon points="42,36 66,50 42,64" fill="var(--blue-ink)"/>`)}<b>Video darslar</b><span>${LESSONS.length} ta ovozli dars · ${ld} tasi ko‘rilgan</span></button>
+    <button class="tile" id="bilet">${icon(`<rect x="14" y="8" width="72" height="84" rx="10" fill="var(--surface-2)" stroke="var(--muted)" stroke-width="5"/><path d="M30 34 H70 M30 50 H70 M30 66 H56" stroke="var(--muted)" stroke-width="6" stroke-linecap="round"/>`)}<b>Biletlar</b><span>${bilets().length} ta bilet, 20 tadan savol</span></button>
+    <button class="tile" id="topics">${icon(SIGNS.giveway.s)}<b>Mavzular bo‘yicha</b><span>${Object.keys(TOPICS).length} ta mavzu, izoh bilan</span></button>
+    <button class="tile" id="duel">${icon(`<circle cx="50" cy="50" r="45" fill="var(--accent)"/><path d="M30 70 L66 34 M70 70 L34 34" stroke="var(--accent-ink)" stroke-width="9" stroke-linecap="round"/>`)}<b>Duel</b><span>Raqib bilan tezlikka${D.duels?` · ${D.wins}/${D.duels} g‘alaba`:''}</span></button>
+    <button class="tile" id="mist">${icon(`<circle cx="50" cy="50" r="45" fill="var(--bad)"/><path d="M50 26 V56" stroke="#fff" stroke-width="10" stroke-linecap="round"/><circle cx="50" cy="72" r="6" fill="#fff"/>`)}<b>Xatolar <span class="count">${D.mistakes.length}</span></b><span>Adashgan savollaringiz</span></button>
+    <button class="tile" id="signs">${icon(SIGNS.main.s)}<b>Yo‘l belgilari</b><span>${Object.keys(SIGNS).length} ta belgi va ma’nosi</span></button>
+  </div>
+  <button class="ghost" id="all">Barcha savollar aralash · ${Q.length} ta</button>
+  <p class="foot">Bazada ${BASE.length} ta namuna savol${IMPORTED.length?` va ${IMPORTED.length} ta yuklangan savol`:''}. <button class="linkbtn" id="imp">Savollar bazasini yuklash</button></p>`;
+  $('#exam').onclick=()=>start('exam',shuffle(Q).slice(0,20));
+  $('#lessons').onclick=lessons;
+  $('#bilet').onclick=biletList;
+  $('#topics').onclick=topics;
+  $('#duel').onclick=()=>start('duel',shuffle(Q).slice(0,10));
+  $('#mist').onclick=()=>{const l=Q.filter(q=>D.mistakes.includes(q.id));if(l.length)start('mist',shuffle(l));};
+  $('#signs').onclick=signs;
+  $('#all').onclick=()=>start('practice',shuffle(Q),'Aralash mashq');
+  $('#imp').onclick=importer;
+  window.scrollTo({top:0});
+}
+
+function topics(){
+  stopAll();
+  app.innerHTML=topbar('Mavzular')+`<div class="list">${Object.entries(TOPICS).map(([k,n])=>{const l=Q.filter(q=>(q.t||'qoida')===k);const ok=l.filter(q=>D.seen[q.id]).length;
+    return `<button class="row" data-t="${k}"><div class="grow"><b>${n}</b><small>${l.length} ta savol</small></div><span class="ring" style="color:${ok===l.length?'var(--ok)':'var(--muted)'}">${ok}/${l.length}</span></button>`}).join('')}</div>`;
+  $('#bk').onclick=home;
+  app.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>start('practice',shuffle(Q.filter(q=>(q.t||'qoida')===b.dataset.t)),TOPICS[b.dataset.t]));
+}
+
+function biletList(){
+  stopAll();
+  const bs=bilets();
+  app.innerHTML=topbar('Biletlar')+`<p class="muted" style="margin:0">Har bir bilet imtihon shartida: 25 daqiqa, 2 tadan ortiq xato mumkin emas.</p>
+  <div class="bilets">${bs.map((b,i)=>{const r=D.bilets[i+1];return `<button class="bilet ${r==null?'':r>=b.length-2?'ok':'bad'}" data-b="${i}"><b>${i+1}</b><span>${r==null?b.length+' savol':r+'/'+b.length}</span></button>`}).join('')}</div>`;
+  $('#bk').onclick=home;
+  app.querySelectorAll('[data-b]').forEach(b=>b.onclick=()=>{const i=+b.dataset.b;start('exam',bs[i],`${i+1}-bilet`,i+1)});
+}
+
+function signs(){
+  stopAll();
+  const groups=[...new Set(Object.values(SIGNS).map(s=>s.g))];
+  app.innerHTML=topbar('Yo‘l belgilari')+groups.map(g=>`<div class="eyebrow">${g} belgilar</div><div class="grid">${Object.values(SIGNS).filter(s=>s.g===g).map(s=>`<div class="sg">${svg(s.s)}<b>${s.n}</b></div>`).join('')}</div>`).join('');
+  $('#bk').onclick=home;
+}
+
+/* ---------- lessons ---------- */
+function lessons(){
+  stopAll();
+  app.innerHTML=topbar('Video darslar')+`<p class="muted" style="margin:0">Har bir dars ovozli tushuntirish va jonli sxemalar bilan. Darsdan keyin shu mavzu bo‘yicha mashq qiling.</p>
+  <div class="list">${LESSONS.map(l=>`<button class="row" data-l="${l.id}"><span class="num ${D.lessons[l.id]?'done':''}">${D.lessons[l.id]?'✓':l.id}</span><div class="grow"><b>${l.title}</b><small>${fmt(l.dur)} · ${l.steps.length} qism</small></div></button>`).join('')}</div>`;
+  $('#bk').onclick=home;
+  app.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>lesson(LESSONS.find(l=>l.id==b.dataset.l)));
+}
+function tlSvg(mode){
+  const r=mode==='arrow'?'on':'', y=mode==='flash'?'blink':'', g='';
+  let s=`<rect width="300" height="200" fill="var(--verge)"/><rect x="${mode==='arrow'?104:122}" y="20" width="56" height="160" rx="14" fill="#1b1f25"/>
+   <circle class="lamp lr ${r}" cx="${mode==='arrow'?132:150}" cy="52" r="18" fill="#E5322B"/><circle class="lamp ly ${y}" cx="${mode==='arrow'?132:150}" cy="100" r="18" fill="#F5B70A"/><circle class="lamp lg ${g}" cx="${mode==='arrow'?132:150}" cy="148" r="18" fill="#2DBE55"/>`;
+  if(mode==='arrow') s+=`<rect x="164" y="124" width="48" height="48" rx="12" fill="#1b1f25"/><g class="blink"><path d="M176 148 H196" stroke="#2DBE55" stroke-width="7" stroke-linecap="round"/><polygon points="204,148 192,138 192,158" fill="#2DBE55"/></g>`;
+  return svg(s,'0 0 300 200').replace('<svg',`<svg class="tl-${mode}"`);
+}
+function ctrlSvg(){
+  return svg(`<rect width="300" height="200" fill="var(--verge)"/><ellipse cx="150" cy="186" rx="44" ry="7" fill="#0003"/>
+   <rect x="134" y="66" width="32" height="64" rx="8" fill="#2E4A7A"/><rect x="136" y="128" width="12" height="54" rx="5" fill="#22385E"/><rect x="152" y="128" width="12" height="54" rx="5" fill="#22385E"/>
+   <circle cx="150" cy="50" r="13" fill="#E8C4A0"/><rect x="134" y="34" width="32" height="10" rx="4" fill="#2E4A7A"/>
+   <path d="M136 74 L124 118" stroke="#2E4A7A" stroke-width="10" stroke-linecap="round"/>
+   <g style="transform-origin:162px 72px;animation:pop .6s ease both"><path d="M162 72 L172 24" stroke="#2E4A7A" stroke-width="10" stroke-linecap="round"/>
+   <path d="M172 22 L178 -4" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M174 14 L176 6" stroke="#111" stroke-width="6"/></g>
+   <rect x="190" y="70" width="96" height="30" rx="15" fill="#E5322B"/><text x="238" y="90" text-anchor="middle" font-family="Onest,Arial,sans-serif" font-weight="700" font-size="13" fill="#fff">HAMMA TO‘XTAYDI</text>`,'0 0 300 200');
+}
+function stageHTML(v){
+  if(v.signs) return `<div class="signrow">${v.signs.map(k=>svg(SIGNS[k].s)).join('')}</div>`;
+  if(v.scene) return scene(SC[v.scene]);
+  if(v.tl) return tlSvg(v.tl);
+  if(v.ctrl) return ctrlSvg();
+  if(v.big) return `<div class="bigvis"><b>${esc(v.big)}</b><span>${esc(v.sub||'')}</span></div>`;
+  return '';
+}
+function lesson(L){
+  stopAll();
+  const lens=L.steps.map(s=>s[0].length), tot=lens.reduce((a,b)=>a+b,0);
+  const starts=[];let acc=0;for(const n of lens){starts.push(acc/tot);acc+=n;}
+  let cur=-1;
+  const next=LESSONS.find(x=>x.id===L.id+1);
+  app.innerHTML=topbar(`${L.id}-dars. ${L.title}`)+`
+   <div class="stage" id="stage"></div>
+   <div class="caption" id="cap" aria-live="polite"></div>
+   <div class="ctrl"><button class="play" id="pp" aria-label="Ijro etish"></button>
+     <div class="grow"><input type="range" id="seek" min="0" max="1000" value="0" aria-label="Dars vaqti"><span class="tm" id="tm">0:00 / ${fmt(L.dur)}</span></div></div>
+   <div class="steps">${L.steps.map((s,i)=>`<button class="step" data-s="${i}"><b>${i+1}</b><span>${esc(s[0])}</span></button>`).join('')}</div>
+   <div class="btns"><button class="primary" id="prac">${TOPICS[L.topic]}: mashq qilish</button>${next?`<button class="ghost" id="nextL">Keyingi dars: ${esc(next.title)}</button>`:''}</div>`;
+  const au=new Audio(L.audio); au.preload='auto'; AU=au;
+  const pp=$('#pp'), seek=$('#seek'), tm=$('#tm');
+  const icPlay=`<svg width="22" height="22" viewBox="0 0 24 24"><polygon points="7,4 20,12 7,20" fill="currentColor"/></svg>`, icPause=`<svg width="22" height="22" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" fill="currentColor"/><rect x="14" y="4" width="4" height="16" fill="currentColor"/></svg>`;
+  pp.innerHTML=icPlay;
+  const dur=()=>isFinite(au.duration)&&au.duration>0?au.duration:L.dur;
+  function setStep(i){
+    if(i===cur) return; cur=i;
+    const v=L.steps[i][1], st=$('#stage');
+    st.innerHTML=stageHTML(v);
+    $('#cap').textContent=L.steps[i][0];
+    app.querySelectorAll('.step').forEach((b,j)=>{b.classList.toggle('cur',j===i);b.classList.toggle('past',j<i)});
+    if(v.scene&&!v.still) animateScene(st,SC[v.scene],true); else animId++;
+  }
+  function sync(){
+    const f=au.currentTime/dur(); let i=0; for(let k=0;k<starts.length;k++) if(f>=starts[k]-0.001) i=k;
+    setStep(i); if(!seek.matches(':active')) seek.value=Math.round(f*1000);
+    tm.textContent=`${fmt(au.currentTime)} / ${fmt(dur())}`;
+  }
+  au.addEventListener('timeupdate',sync);
+  au.addEventListener('loadedmetadata',sync);
+  au.addEventListener('play',()=>{pp.innerHTML=icPause;pp.setAttribute('aria-label','Pauza')});
+  au.addEventListener('pause',()=>{pp.innerHTML=icPlay;pp.setAttribute('aria-label','Ijro etish')});
+  au.addEventListener('ended',()=>{D.lessons[L.id]=true;save();setStep(L.steps.length-1)});
+  au.addEventListener('error',()=>{$('#cap').textContent='Audio yuklanmadi. Internet aloqasini tekshirib, sahifani qayta oching.'});
+  pp.onclick=()=>{if(au.paused){au.play().catch(()=>{})}else au.pause()};
+  seek.oninput=()=>{au.currentTime=seek.value/1000*dur();sync()};
+  app.querySelectorAll('.step').forEach(b=>b.onclick=()=>{const i=+b.dataset.s;au.currentTime=starts[i]*dur()+0.05;setStep(i);if(au.paused)au.play().catch(()=>{})});
+  $('#bk').onclick=lessons;
+  $('#prac').onclick=()=>start('practice',shuffle(Q.filter(q=>(q.t||'qoida')===L.topic)),TOPICS[L.topic]);
+  if(next) $('#nextL').onclick=()=>lesson(next);
+  setStep(0); window.scrollTo({top:0});
+}
+
+/* ---------- import ---------- */
+const SAMPLE=`[
+  {
+    "q": "Bu belgi nimani bildiradi?",
+    "a": ["Javob 1", "Javob 2", "Javob 3", "Javob 4"],
+    "c": 0,
+    "e": "Izoh (ixtiyoriy)",
+    "t": "belgi",
+    "img": "data:image/png;base64,... (ixtiyoriy)"
+  }
+]`;
+function normalize(list){
+  if(!Array.isArray(list)) throw new Error('Fayl JSON massiv ( [ ... ] ) bo‘lishi kerak.');
+  return list.map((x,i)=>{
+    if(!x||typeof x.q!=='string'||!x.q.trim()) throw new Error(`${i+1}-savolda "q" (savol matni) yo‘q.`);
+    if(!Array.isArray(x.a)||x.a.length<2||x.a.length>5||x.a.some(v=>typeof v!=='string')) throw new Error(`${i+1}-savolda "a" 2 tadan 5 tagacha javob matnidan iborat bo‘lishi kerak.`);
+    const c=Number.isInteger(x.c)?x.c:0; if(c<0||c>=x.a.length) throw new Error(`${i+1}-savolda "c" (to‘g‘ri javob raqami) noto‘g‘ri.`);
+    const a=[x.a[c],...x.a.filter((_,k)=>k!==c)];
+    const t=TOPICS[x.t]?x.t:'qoida';
+    const img=typeof x.img==='string'&&x.img.startsWith('data:image/')?x.img:undefined;
+    return {id:'u'+(i+1),t,q:x.q.trim(),a,e:typeof x.e==='string'?x.e:'',img};
+  });
+}
+function importer(){
+  stopAll();
+  app.innerHTML=topbar('Savollar bazasi')+`
+  <section class="panel" style="display:flex;flex-direction:column;gap:12px">
+    <p style="margin:0">Rasmiy yoki o‘zingiz tayyorlagan savollarni JSON faylidan yuklang. Har bir savolda 2–5 ta javob bo‘lishi mumkin. Rasmlar <b>data:image</b> ko‘rinishida faylning ichida bo‘lishi kerak.</p>
+    <label class="filebtn" for="file">JSON faylni tanlash</label>
+    <input type="file" id="file" accept=".json,application/json" hidden>
+    <div id="imsg"></div>
+    <p class="muted" style="margin:0;font-size:13px">Hozir yuklangan: <b>${IMPORTED.length}</b> ta savol. Ular faqat shu qurilmadagi brauzerda saqlanadi.</p>
+    ${IMPORTED.length?`<button class="ghost danger" id="clr">Yuklangan savollarni o‘chirish</button>`:''}
+  </section>
+  <div class="eyebrow">Fayl namunasi</div>
+  <textarea id="sample" readonly>${esc(SAMPLE)}</textarea>
+  <button class="ghost" id="copy">Namunani nusxalash</button>
+  <p class="muted" style="margin:0;font-size:13px">«c» — to‘g‘ri javobning tartib raqami (0 dan boshlanadi). «t» — mavzu: ${Object.keys(TOPICS).join(', ')}.</p>`;
+  $('#bk').onclick=home;
+  const msg=(t,ok)=>{$('#imsg').innerHTML=`<div class="msg ${ok?'ok':'bad'}">${esc(t)}</div>`};
+  $('#file').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();
+    r.onload=()=>{try{const list=normalize(JSON.parse(r.result));IMPORTED=list;
+        try{localStorage.setItem(IKEY,JSON.stringify(list))}catch(err){msg(`${list.length} ta savol yuklandi, lekin brauzer xotirasiga sig‘madi: sahifa yopilganda yo‘qoladi. Rasmlarni kichraytirib ko‘ring.`,false);rebuild();return}
+        rebuild();msg(`${list.length} ta savol yuklandi va bazaga qo‘shildi.`,true);
+      }catch(err){msg(err instanceof SyntaxError?'Fayl JSON formatida emas. Namunaga qarab tekshiring.':err.message,false)}};
+    r.readAsText(f);};
+  const clr=$('#clr'); if(clr){let armed=false;clr.onclick=()=>{if(!armed){armed=true;clr.textContent='Tasdiqlash uchun yana bosing';return}
+    IMPORTED=[];try{localStorage.removeItem(IKEY)}catch(e){};D.mistakes=D.mistakes.filter(id=>typeof id==='number');save();rebuild();importer();}}
+  $('#copy').onclick=()=>{const ta=$('#sample');navigator.clipboard.writeText(SAMPLE).then(()=>{$('#copy').textContent='Nusxalandi'}).catch(()=>{ta.focus();ta.select();$('#copy').textContent='Belgilandi — nusxalang'})};
+}
+
+/* ---------- quiz ---------- */
+const TITLES={exam:'Imtihon',duel:'Duel',mist:'Xatolar ustida ishlash'};
+function start(mode,list,title,bilet){
+  stopAll();
+  if(!list.length) return;
+  S={mode,bilet,title:title||TITLES[mode],i:0,res:[],items:list.map(q=>({q,opts:shuffle(q.a.map((t,k)=>({t,ok:k===0})))})),
+     deadline:mode==='exam'?Date.now()+25*60e3:0,me:0,bot:0,botName:shuffle(['Jasur','Madina','Bekzod','Nilufar','Sardor'])[0]};
+  if(mode==='exam') tick=setInterval(updTimer,500);
+  show();
+}
+function updTimer(){
+  if(!S) return;
+  if(S.mode==='exam'){const left=Math.max(0,S.deadline-Date.now());const el=$('#tm');
+    if(el){const m=Math.floor(left/60e3),s=Math.floor(left/1e3)%60;el.textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;el.classList.toggle('warn',left<120e3)}
+    if(left<=0){stopTimer();finish('time')}}
+  else if(S.mode==='duel'&&S.q){const el=S.q, t=(Date.now()-el.t0)/1e3, left=Math.max(0,15-t);
+    const bar=$('#tb'); if(bar) bar.style.width=(left/15*100)+'%';
+    const tm=$('#tm'); if(tm) tm.textContent=Math.ceil(left)+'s';
+    const bs=$('#bs'); if(bs&&!el.done&&t>=el.botT){bs.textContent=`${S.botName} javob berdi`;bs.classList.add('done')}
+    if(left<=0&&!el.done) answer(-1);}
+}
+function show(){
+  animId++;
+  const it=S.items[S.i], q=it.q;
+  const fails=S.res.filter(r=>!r).length;
+  const media=q.sign?`<div class="media sign">${svg(SIGNS[q.sign].s)}</div>`:q.scene?`<div class="media scene" id="qscene">${scene(q.scene)}</div>`:q.img?`<div class="media sign"><img src="${esc(q.img)}" alt=""></div>`:'';
+  const right=S.mode==='exam'?`<span class="timer" id="tm">25:00</span>`:S.mode==='duel'?`<span class="timer" id="tm">15s</span>`:`<span class="timer">${S.i+1}/${S.items.length}</span>`;
+  app.innerHTML=`<div class="top"><button class="iconbtn" id="bk" aria-label="Chiqish">${back}</button><div class="t">${esc(S.title)}${S.mode==='exam'?` <span class="muted" style="font-weight:500;font-size:13px">· xato ${fails}/2</span>`:''}</div>${right}</div>
+  ${S.mode==='duel'?`<div class="duel"><div class="pl"><span>Siz</span><b>${S.me}</b></div><div class="vs">VS</div><div class="pl r"><span>${S.botName}</span><b>${S.bot}</b></div></div><div class="tbar"><i id="tb" style="width:100%"></i></div><div class="botstate" id="bs">${S.botName} o‘ylamoqda…</div>`:''}
+  <div class="dots">${S.items.map((_,k)=>`<span class="dot ${k<S.res.length?(S.res[k]?'ok':'bad'):''} ${k===S.i?'cur':''}">${k+1}</span>`).join('')}</div>
+  <div class="qtext">${esc(q.q)}</div>${media}
+  <div class="opts">${it.opts.map((o,k)=>`<button class="opt" data-k="${k}"><span class="k">F${k+1}</span><span>${esc(o.t)}</span></button>`).join('')}</div>
+  <div id="after"></div>`;
+  $('#bk').onclick=()=>{const m=S.mode;home();if(m==='exam'&&S)S=null;};
+  app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>answer(+b.dataset.k));
+  if(S.mode==='duel'){S.q={t0:Date.now(),botT:3+Math.random()*8,botOk:Math.random()<.72,done:false};stopTimer();tick=setInterval(updTimer,200)}
+  updTimer(); window.scrollTo({top:0});
+}
+function answer(k){
+  const it=S.items[S.i];
+  if(S.res.length>S.i) return;
+  const ok=k>=0&&it.opts[k].ok;
+  S.res.push(ok);
+  D.seen[it.q.id]=ok;
+  if(ok) D.mistakes=D.mistakes.filter(x=>x!==it.q.id); else if(!D.mistakes.includes(it.q.id)) D.mistakes.push(it.q.id);
+  save();
+  app.querySelectorAll('.opt').forEach((b,j)=>{b.disabled=true;if(it.opts[j].ok)b.classList.add('right');else if(j===k)b.classList.add('wrong')});
+  let extra='';
+  if(S.mode==='duel'){
+    const t=(Date.now()-S.q.t0)/1e3; S.q.done=true; stopTimer();
+    const gain=ok?10+Math.max(0,Math.round(15-t)):0;
+    const botGain=S.q.botOk&&S.q.botT<15?10+Math.round(15-S.q.botT):0;
+    S.me+=gain; S.bot+=botGain;
+    extra=`<p>Siz: <b>+${gain}</b> · ${S.botName}: <b>+${botGain}</b> ${botGain?'':'(xato yoki ulgurmadi)'}</p>`;
+  }
+  const last=S.i===S.items.length-1;
+  const fails=S.res.filter(r=>!r).length;
+  const examOver=S.mode==='exam'&&fails>2;
+  const showExp=S.mode!=='exam';
+  if(showExp&&it.q.scene) animateScene($('#qscene'),it.q.scene,false);
+  $('#after').innerHTML=`<div class="fb"><b class="${ok?'ok':'bad'}">${ok?'To‘g‘ri':(k<0?'Vaqt tugadi':'Noto‘g‘ri')}</b>${showExp&&it.q.e?`<p>${esc(it.q.e)}</p>`:''}${extra}</div>
+   <button class="primary" id="nx" style="margin-top:12px">${examOver?'Natijani ko‘rish':last?'Yakunlash':'Keyingi savol'}</button>`;
+  const nx=$('#nx'); nx.onclick=()=>{if(examOver||last)finish(examOver?'fail':'done');else{S.i++;show()}};
+  nx.focus({preventScroll:true});
+  if(S.mode==='duel'){const d=$('.duel');if(d){d.querySelector('.pl b').textContent=S.me;d.querySelector('.pl.r b').textContent=S.bot}}
+}
+function finish(why){
+  stopAll();
+  const n=S.res.length, ok=S.res.filter(Boolean).length, total=S.items.length, fails=n-ok;
+  let head='', stamp='';
+  if(S.mode==='exam'){
+    const passed=why==='done'&&fails<=2;
+    D.exams++; if(passed)D.passed++;
+    if(S.bilet) D.bilets[S.bilet]=why==='done'?ok:Math.min(ok,total-3);
+    else if(why==='done') D.best=Math.max(D.best||0,ok);
+    save();
+    stamp=`<span class="stamp ${passed?'ok':'bad'}">${passed?'Imtihondan o‘tdingiz':'O‘ta olmadingiz'}</span>`;
+    head=`<div class="big">${ok}/${total}</div><p class="muted">${why==='time'?'Vaqt tugadi.':why==='fail'?'3 ta xato qilindi, imtihon to‘xtatildi.':`${fails} ta xato. Ruxsat etilgani 2 ta.`}</p>`;
+  } else if(S.mode==='duel'){
+    const win=S.me>S.bot, draw=S.me===S.bot; D.duels++; if(win)D.wins++; save();
+    stamp=`<span class="stamp ${win?'ok':'bad'}">${win?'G‘alaba':draw?'Durang':'Mag‘lubiyat'}</span>`;
+    head=`<div class="big">${S.me} : ${S.bot}</div><p class="muted">Siz va ${S.botName} · ${ok}/${total} to‘g‘ri javob</p>`;
+  } else {
+    stamp=`<span class="stamp ${fails===0?'ok':'bad'}">${fails===0?'Xatosiz':'Mashq yakunlandi'}</span>`;
+    head=`<div class="big">${ok}/${total}</div><p class="muted">${fails?`${fails} ta xato «Xatolar» bo‘limiga qo‘shildi.`:'Barcha javoblar to‘g‘ri.'}</p>`;
+  }
+  const wrong=S.items.slice(0,n).filter((_,k)=>!S.res[k]);
+  const {mode,title,bilet}=S, items=S.items.map(x=>x.q);
+  app.innerHTML=`<section class="panel result">${stamp}${head}</section>
+  ${wrong.length?`<div class="eyebrow">Xatolar tahlili</div><div class="review">${wrong.map(w=>`<div class="rv"><b>${esc(w.q.q)}</b><span class="c">✓ ${esc(w.q.a[0])}</span>${w.q.e?`<p class="muted" style="margin:4px 0 0">${esc(w.q.e)}</p>`:''}</div>`).join('')}</div>`:''}
+  <div class="btns"><button class="primary" id="again">Qayta urinish</button><button class="ghost" id="hm">Bosh sahifa</button></div>`;
+  S=null;
+  $('#again').onclick=()=>start(mode,mode==='exam'&&!bilet?shuffle(Q).slice(0,20):mode==='duel'?shuffle(Q).slice(0,10):bilet?items:shuffle(items),title,bilet);
+  $('#hm').onclick=home;
+  window.scrollTo({top:0});
+}
+
+document.addEventListener('keydown',e=>{
+  if(!S||e.target.matches('input,textarea')) return;
+  const n=parseInt(e.key,10);
+  if(n>=1&&n<=5&&S.res.length===S.i){const b=app.querySelector(`.opt[data-k="${n-1}"]`);if(b)b.click();}
+});
+
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&AU)AU.pause()});
+window.yolchiBack=()=>{const b=document.getElementById('bk');if(b){b.click();return true}return false};
+window.yolchiPause=()=>{if(AU)AU.pause()};
+home();
+})();
+</script>
+</body>
+</html>
